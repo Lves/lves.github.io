@@ -68,5 +68,5 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:github
-  repo:https://github.com/Lves/lves.github.io.git
+  type:git
+  repo:git@github.com:Lves/lves.github.io.git
