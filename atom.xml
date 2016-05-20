@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>LvesLi&#39;s Blogging</title>
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://lves.github.io/"/>
   <updated>2016-05-20T11:39:41.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://lves.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>LvesLi</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/05/20/hello-world/"/>
-    <id>http://yoursite.com/2016/05/20/hello-world/</id>
+    <link href="http://lves.github.io/2016/05/20/hello-world/"/>
+    <id>http://lves.github.io/2016/05/20/hello-world/</id>
     <published>2016-05-20T11:39:41.000Z</published>
     <updated>2016-05-20T11:39:41.000Z</updated>
     
