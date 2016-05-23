@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lves.github.io/"/>
-  <updated>2016-05-20T11:39:41.000Z</updated>
+  <updated>2016-05-23T11:03:00.000Z</updated>
   <id>http://lves.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OS X 10.11 安装Cocoapods失败：Operation not permitted</title>
+    <link href="http://lves.github.io/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
+    <id>http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
+    <published>2016-05-23T11:02:07.000Z</published>
+    <updated>2016-05-23T11:03:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not permitted &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.lvesli.com/wp-content/uploads/2015/10/屏幕快照-2015-10-28-上午11.57.32.png&quot; alt=&quot;http://www.lvesli.com/wp-content/uploads/2015/10/屏幕快照-2015-10-28-上午11.57.32.png&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;一共有两种解决方案：&quot;&gt;&lt;a href=&quot;#一共有两种解决方案：&quot; class=&quot;headerlink&quot; title=&quot;一共有两种解决方案：&quot;&gt;&lt;/a&gt;一共有两种解决方案：&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;1.官方解决方案；&lt;/p&gt;
+&lt;p&gt;2.github解决方案，安装在其他目录（我采用的方案）；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;1-官方给出的解决方式是：自定义-GEM-HOME&quot;&gt;&lt;a href=&quot;#1-官方给出的解决方式是：自定义-GEM-HOME&quot; class=&quot;headerlink&quot; title=&quot;1.官方给出的解决方式是：自定义 GEM_HOME&quot;&gt;&lt;/a&gt;1.官方给出的解决方式是：自定义 GEM_HOME&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;$ mkdir -p $HOME/Software/ruby
+$ export GEM_HOME=$HOME/Software/ruby
+$ gem install cocoapods
+[...]
+1 gem installed
+$ export PATH=$PATH:$HOME/Software/ruby/bin
+$ pod --version
+0.37.2  
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&quot;Github-解决方案&quot;&gt;&lt;a href=&quot;#Github-解决方案&quot; class=&quot;headerlink&quot; title=&quot;Github 解决方案&quot;&gt;&lt;/a&gt;Github 解决方案&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;$ sudo gem install -n /usr/local/bin cocoapods
+$ pod setup
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;建议开通VPN安装会快点，如果你没有vpn也可以参照一下&lt;strong&gt;&lt;em&gt; 唐巧 &lt;/em&gt;&lt;/strong&gt;的一篇博客：&lt;a href=&quot;http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://www.lvesli.com/?p=348&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.lvesli.com/?p=348&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg&quot; alt=&quot;http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not p
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
