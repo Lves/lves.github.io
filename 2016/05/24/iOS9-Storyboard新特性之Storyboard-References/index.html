@@ -6,17 +6,23 @@
   <title>iOS9 Storyboard新特性之 Storyboard References | LvesLi&#39;s Blogging</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
-#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
-#####2. 通过 scene dock  给ViewController附加view。
-#####3. 在storyboard上给 navigat">
+
+分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+通过 scene dock  给ViewController附加view。
+在storyboard上给 navigation bar添加多个button .
+
+初始">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS9 Storyboard新特性之 Storyboard References">
 <meta property="og:url" content="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/index.html">
 <meta property="og:site_name" content="LvesLi's Blogging">
 <meta property="og:description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
-#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
-#####2. 通过 scene dock  给ViewController附加view。
-#####3. 在storyboard上给 navigat">
+
+分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+通过 scene dock  给ViewController附加view。
+在storyboard上给 navigation bar添加多个button .
+
+初始">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-6a5d4de929c30aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-d494671ddaba5ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -31,13 +37,16 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-4a228f7138cf126f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-3928bbd8017930e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-05-24T01:27:30.000Z">
+<meta property="og:updated_time" content="2016-05-24T01:31:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9 Storyboard新特性之 Storyboard References">
 <meta name="twitter:description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
-#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
-#####2. 通过 scene dock  给ViewController附加view。
-#####3. 在storyboard上给 navigat">
+
+分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+通过 scene dock  给ViewController附加view。
+在storyboard上给 navigation bar添加多个button .
+
+初始">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="LvesLi&#39;s Blogging" type="application/atom+xml">
@@ -110,23 +119,24 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：</p>
-<p>#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。</p>
-<p>#####2. 通过 scene dock  给ViewController附加view。</p>
-<p>#####3. 在storyboard上给 navigation bar添加多个button .</p>
+<ol>
+<li>分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。</li>
+<li>通过 scene dock  给ViewController附加view。</li>
+<li>在storyboard上给 navigation bar添加多个button .</li>
+</ol>
 <p>初始项目，在 <code>Main.storyboard</code>中有一个 <code>TabBarViewController</code>,它包含两个<code>HomeViewController</code>和<code>UserViewController</code>。<br><code>HomeViewController</code>是一个tableviewcontroller,点击cell进入<code>DetailViewController</code>。UserViewcontroller是一个简单的ViewController。<br>Main.storyboard和项目目录如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"><br><img src="http://upload-images.jianshu.io/upload_images/1159872-6a5d4de929c30aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"><br>  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。<br><img src="http://upload-images.jianshu.io/upload_images/1159872-d494671ddaba5ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"><br>运行项目效果如下：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-92eb910fb213523a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"><br>今天我们先看一下它的第一个特性，<code>storyboard</code>的分解和引用 （<code>storyboard references</code>）。<br>用<code>storyboard</code>做过开发的猿都知道，<code>storyboard</code>会慢慢的变得越来越臃肿；<br>还有一个”致命“的弱点就是使用<code>Git</code>进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！<br>即使我们可以使用多个<code>storyboard</code>来解决但也无法实现使用<code>segue</code>从一个<code>storyboard</code>中的<code>viewcontroller</code> push到另一个<code>storyboard</code>中的<code>controller</code>。<br>在Xcode7中这些问题通过<code>storyboard references</code>都得到了很好的解决 。</p>
 <p>###一、创建一个Storyboard引用</p>
 <p>打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮<br> <img src="http://upload-images.jianshu.io/upload_images/1159872-2dc50bd0c9c14f69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"><br> <img src="http://upload-images.jianshu.io/upload_images/1159872-96606561bbaa6d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"><br>在弹出框中给新的storyboard起个新的名字Home.storyboard：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-599056d623f5ab67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"><br>保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-3f1e7a70639a939c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8.png"><br>打开原来的的<code>Main.storyboard</code>如下图，到此分解单个<code>storyboard</code>称多个<code>storyboard</code>就完成了，就这么简单。<br><img src="http://upload-images.jianshu.io/upload_images/1159872-393b764e057b79c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9.png"></p>
 <p>###二、在团队开发中使用Storyboard<br><code>storyboard references</code> 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？<br>首先打开<code>Main.storyboard</code>从 <code>Object Library</code>中托出一个<code>storyboard references</code> 到<code>User Interface</code>中，<br><img src="http://upload-images.jianshu.io/upload_images/1159872-46d9171d2bd60c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="10.png"><br>然后按住键盘<code>control</code>键，点击鼠标左键从<code>TabBarController</code>拖拽到 <code>storyboard reference</code>，在弹出框中选择 <code>view controllers</code>如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-8f378ffb21b16e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="11.png"><br>选中 <code>storyboard reference</code> 打开右侧<code>Attributes Inspector</code> 设置<code>storyboard</code> 为 <code>DiscoverStoryboard.storyboard</code> 。好了到此添加一个已存在的storyboard成功。<br><img src="http://upload-images.jianshu.io/upload_images/1159872-4a228f7138cf126f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12.png"><br>运行项目如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-3928bbd8017930e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="13.png"></p>
-<p><strong><em> 原文链接：<a href="http://www.lvesli.com/?p=356" target="_blank" rel="external">http://www.lvesli.com/?p=356</a> </em></strong></p>
-<blockquote>
+<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/" target="_blank" rel="external">http://www.lvesli.com</a> </em></strong></p>
+<hr>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-</blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciokrinys0002rkfyxddjmrc5" class="article-share-link">Share</a>
+      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciokron9w0002ssfysm51c9zj" class="article-share-link">Share</a>
       
       
     </footer>
