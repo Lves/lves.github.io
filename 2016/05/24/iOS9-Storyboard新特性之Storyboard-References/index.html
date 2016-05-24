@@ -3,17 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LvesLi&#39;s Blogging</title>
+  <title>iOS9 Storyboard新特性之 Storyboard References | LvesLi&#39;s Blogging</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LvesLi's Blogging">
-<meta property="og:url" content="http://lves.github.io/index.html">
+  <meta name="description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
+#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+#####2. 通过 scene dock  给ViewController附加view。
+#####3. 在storyboard上给 navigat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS9 Storyboard新特性之 Storyboard References">
+<meta property="og:url" content="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/index.html">
 <meta property="og:site_name" content="LvesLi's Blogging">
-<meta property="og:description">
+<meta property="og:description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
+#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+#####2. 通过 scene dock  给ViewController附加view。
+#####3. 在storyboard上给 navigat">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-6a5d4de929c30aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-d494671ddaba5ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-92eb910fb213523a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-2dc50bd0c9c14f69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-96606561bbaa6d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-599056d623f5ab67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-3f1e7a70639a939c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-393b764e057b79c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-46d9171d2bd60c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-8f378ffb21b16e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-4a228f7138cf126f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-3928bbd8017930e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-05-24T01:27:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LvesLi's Blogging">
-<meta name="twitter:description">
+<meta name="twitter:title" content="iOS9 Storyboard新特性之 Storyboard References">
+<meta name="twitter:description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
+#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。
+#####2. 通过 scene dock  给ViewController附加view。
+#####3. 在storyboard上给 navigat">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="LvesLi&#39;s Blogging" type="application/atom+xml">
   
@@ -62,9 +87,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-iOS9-Storyboard新特性之Storyboard-References" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-iOS9-Storyboard新特性之Storyboard-References" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" class="article-date">
   <time datetime="2016-05-24T01:25:35.000Z" itemprop="datePublished">2016-05-24</time>
@@ -77,8 +100,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/">iOS9 Storyboard新特性之 Storyboard References</a>
+    <h1 class="article-title" itemprop="name">
+      iOS9 Storyboard新特性之 Storyboard References
     </h1>
   
 
@@ -109,112 +132,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-OS-X-10-11-安装Cocoapods失败：Operation-not-permitted" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" class="article-date">
-  <time datetime="2016-05-23T11:02:07.000Z" itemprop="datePublished">2016-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/">OS X 10.11 安装Cocoapods失败：Operation not permitted</a>
-    </h1>
+    <a href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">OS X 10.11 安装Cocoapods失败：Operation not permitted</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   系统升级到 <strong><em> OS X 10.11 </em></strong>  (EI Capitan)的时候，当安装 <strong> CocoaPods </strong> 的时候提示如下的错误：<strong><em> Operation not permitted </em></strong></p>
-<h4 id="一共有两种解决方案："><a href="#一共有两种解决方案：" class="headerlink" title="一共有两种解决方案："></a>一共有两种解决方案：</h4><blockquote>
-<p>1.官方解决方案；</p>
-<p>2.github解决方案，安装在其他目录（我采用的方案）；</p>
-</blockquote>
-<h5 id="1-官方给出的解决方式是：自定义-GEM-HOME"><a href="#1-官方给出的解决方式是：自定义-GEM-HOME" class="headerlink" title="1.官方给出的解决方式是：自定义 GEM_HOME"></a>1.官方给出的解决方式是：自定义 GEM_HOME</h5><pre><code>$ mkdir -p $HOME/Software/ruby
-$ export GEM_HOME=$HOME/Software/ruby
-$ gem install cocoapods
-[...]
-1 gem installed
-$ export PATH=$PATH:$HOME/Software/ruby/bin
-$ pod --version
-0.37.2  
-</code></pre><h5 id="Github-解决方案"><a href="#Github-解决方案" class="headerlink" title="Github 解决方案"></a>Github 解决方案</h5><pre><code>$ sudo gem install -n /usr/local/bin cocoapods
-$ pod setup
-</code></pre><p>建议开通VPN安装会快点，如果你没有vpn也可以参照一下<strong><em> 唐巧 </em></strong>的一篇博客：<a href="http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency" target="_blank" rel="external">链接</a></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/" target="_blank" rel="external">http://lvesli.com</a> </em></strong></p>
-<blockquote>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg" alt="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciokrinyj0000rkfyfgdxnmk5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/20/hello-world/" class="article-date">
-  <time datetime="2016-05-20T11:39:41.000Z" itemprop="datePublished">2016-05-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/20/hello-world/" data-id="ciokrinyp0001rkfy4ppn84mt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         

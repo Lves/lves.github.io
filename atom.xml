@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lves.github.io/"/>
-  <updated>2016-05-24T01:17:34.000Z</updated>
+  <updated>2016-05-24T01:27:30.000Z</updated>
   <id>http://lves.github.io/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iOS9 Storyboard新特性之 Storyboard References</title>
+    <link href="http://lves.github.io/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
+    <id>http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
+    <published>2016-05-24T01:25:35.000Z</published>
+    <updated>2016-05-24T01:27:30.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
+&lt;p&gt;#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。&lt;/p&gt;
+&lt;p&gt;#####2. 通过 scene dock  给ViewController附加view。&lt;/p&gt;
+&lt;p&gt;#####3. 在storyboard上给 navigation bar添加多个button .&lt;/p&gt;
+&lt;p&gt;初始项目，在 &lt;code&gt;Main.storyboard&lt;/code&gt;中有一个 &lt;code&gt;TabBarViewController&lt;/code&gt;,它包含两个&lt;code&gt;HomeViewController&lt;/code&gt;和&lt;code&gt;UserViewController&lt;/code&gt;。&lt;br&gt;&lt;code&gt;HomeViewController&lt;/code&gt;是一个tableviewcontroller,点击cell进入&lt;code&gt;DetailViewController&lt;/code&gt;。UserViewcontroller是一个简单的ViewController。&lt;br&gt;Main.storyboard和项目目录如下图：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-c9a42cd1b1558919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;1.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-6a5d4de929c30aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;2.png&quot;&gt;&lt;br&gt;  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-d494671ddaba5ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;3.png&quot;&gt;&lt;br&gt;运行项目效果如下：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-92eb910fb213523a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;4.png&quot;&gt;&lt;br&gt;今天我们先看一下它的第一个特性，&lt;code&gt;storyboard&lt;/code&gt;的分解和引用 （&lt;code&gt;storyboard references&lt;/code&gt;）。&lt;br&gt;用&lt;code&gt;storyboard&lt;/code&gt;做过开发的猿都知道，&lt;code&gt;storyboard&lt;/code&gt;会慢慢的变得越来越臃肿；&lt;br&gt;还有一个”致命“的弱点就是使用&lt;code&gt;Git&lt;/code&gt;进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！&lt;br&gt;即使我们可以使用多个&lt;code&gt;storyboard&lt;/code&gt;来解决但也无法实现使用&lt;code&gt;segue&lt;/code&gt;从一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;viewcontroller&lt;/code&gt; push到另一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;controller&lt;/code&gt;。&lt;br&gt;在Xcode7中这些问题通过&lt;code&gt;storyboard references&lt;/code&gt;都得到了很好的解决 。&lt;/p&gt;
+&lt;p&gt;###一、创建一个Storyboard引用&lt;/p&gt;
+&lt;p&gt;打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮&lt;br&gt; &lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-2dc50bd0c9c14f69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;5.png&quot;&gt;&lt;br&gt; &lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-96606561bbaa6d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;6.png&quot;&gt;&lt;br&gt;在弹出框中给新的storyboard起个新的名字Home.storyboard：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-599056d623f5ab67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;7.png&quot;&gt;&lt;br&gt;保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-3f1e7a70639a939c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;8.png&quot;&gt;&lt;br&gt;打开原来的的&lt;code&gt;Main.storyboard&lt;/code&gt;如下图，到此分解单个&lt;code&gt;storyboard&lt;/code&gt;称多个&lt;code&gt;storyboard&lt;/code&gt;就完成了，就这么简单。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-393b764e057b79c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;9.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###二、在团队开发中使用Storyboard&lt;br&gt;&lt;code&gt;storyboard references&lt;/code&gt; 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？&lt;br&gt;首先打开&lt;code&gt;Main.storyboard&lt;/code&gt;从 &lt;code&gt;Object Library&lt;/code&gt;中托出一个&lt;code&gt;storyboard references&lt;/code&gt; 到&lt;code&gt;User Interface&lt;/code&gt;中，&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-46d9171d2bd60c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;10.png&quot;&gt;&lt;br&gt;然后按住键盘&lt;code&gt;control&lt;/code&gt;键，点击鼠标左键从&lt;code&gt;TabBarController&lt;/code&gt;拖拽到 &lt;code&gt;storyboard reference&lt;/code&gt;，在弹出框中选择 &lt;code&gt;view controllers&lt;/code&gt;如下图：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-8f378ffb21b16e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;11.png&quot;&gt;&lt;br&gt;选中 &lt;code&gt;storyboard reference&lt;/code&gt; 打开右侧&lt;code&gt;Attributes Inspector&lt;/code&gt; 设置&lt;code&gt;storyboard&lt;/code&gt; 为 &lt;code&gt;DiscoverStoryboard.storyboard&lt;/code&gt; 。好了到此添加一个已存在的storyboard成功。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-4a228f7138cf126f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;12.png&quot;&gt;&lt;br&gt;运行项目如下图所示：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-3928bbd8017930e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;13.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://www.lvesli.com/?p=356&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.lvesli.com/?p=356&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
+&lt;p&gt;#####1. 分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>OS X 10.11 安装Cocoapods失败：Operation not permitted</title>
     <link href="http://lves.github.io/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
     <id>http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
     <published>2016-05-23T11:02:07.000Z</published>
-    <updated>2016-05-24T01:17:34.000Z</updated>
+    <updated>2016-05-24T01:24:02.000Z</updated>
     
     <content type="html">&lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not permitted &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&quot;一共有两种解决方案：&quot;&gt;&lt;a href=&quot;#一共有两种解决方案：&quot; class=&quot;headerlink&quot; title=&quot;一共有两种解决方案：&quot;&gt;&lt;/a&gt;一共有两种解决方案：&lt;/h4&gt;&lt;blockquote&gt;
@@ -38,7 +71,7 @@ $ pod --version
 &lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&quot;Github-解决方案&quot;&gt;&lt;a href=&quot;#Github-解决方案&quot; class=&quot;headerlink&quot; title=&quot;Github 解决方案&quot;&gt;&lt;/a&gt;Github 解决方案&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;$ sudo gem install -n /usr/local/bin cocoapods
 $ pod setup
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;建议开通VPN安装会快点，如果你没有vpn也可以参照一下&lt;strong&gt;&lt;em&gt; 唐巧 &lt;/em&gt;&lt;/strong&gt;的一篇博客：&lt;a href=&quot;http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://www.lvesli.com/?p=348&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.lvesli.com/?p=348&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
 &lt;/blockquote&gt;
