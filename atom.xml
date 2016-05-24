@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lves.github.io/"/>
-  <updated>2016-05-24T01:41:08.000Z</updated>
+  <updated>2016-05-24T10:23:21.000Z</updated>
   <id>http://lves.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/"/>
     <id>http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/</id>
     <published>2016-05-24T01:38:28.000Z</published>
-    <updated>2016-05-24T01:41:08.000Z</updated>
+    <updated>2016-05-24T10:23:21.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;code&gt;Objective-C&lt;/code&gt;源文件在编译之前要先经过预编译器处理，然后再扔给&lt;code&gt;LLVM&lt;/code&gt;处理、优化。&lt;code&gt;Objectice-C&lt;/code&gt;编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-9338649a2784e917.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;123.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说&lt;code&gt;LLVM&lt;/code&gt;的作者&lt;code&gt;Chris Lattner&lt;/code&gt; 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。&lt;code&gt;龙书&lt;/code&gt;真容如下（快膜拜）：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-a3e7a5906cf0eb1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;234.png&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;code&gt;Objective-C&lt;/code&gt;源文件在编译之前要先经过预编译器处理，然后再扔给&lt;code&gt;LLVM&lt;/code&gt;处理、优化。&lt;code&gt;Objectice-C&lt;/code&gt;编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/101.png?raw=true&quot; alt=&quot;123.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说&lt;code&gt;LLVM&lt;/code&gt;的作者&lt;code&gt;Chris Lattner&lt;/code&gt; 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。&lt;code&gt;龙书&lt;/code&gt;真容如下（快膜拜）：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/102.png?raw=true&quot; alt=&quot;234.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;今天我们主要看看和预处理器（词法分析部分）相关的内容。预处理器处理过程主要包括三个步骤：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;文本翻译： 将输入的源文件分成代码行，并进行一些翻译处理。&lt;/li&gt;
@@ -147,7 +147,7 @@ a^=b;
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -199,7 +199,7 @@ a^=b;
     <link href="http://lves.github.io/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
     <id>http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
     <published>2016-05-23T11:02:07.000Z</published>
-    <updated>2016-05-24T01:24:02.000Z</updated>
+    <updated>2016-05-24T10:23:25.000Z</updated>
     
     <content type="html">&lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not permitted &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&quot;一共有两种解决方案：&quot;&gt;&lt;a href=&quot;#一共有两种解决方案：&quot; class=&quot;headerlink&quot; title=&quot;一共有两种解决方案：&quot;&gt;&lt;/a&gt;一共有两种解决方案：&lt;/h4&gt;&lt;blockquote&gt;
@@ -221,7 +221,7 @@ $ pod setup
 &lt;blockquote&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg&quot; alt=&quot;http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot; alt=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

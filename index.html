@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-каналы"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Поиск"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lves.github.io"></form>
@@ -86,8 +86,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>Objective-C</code>源文件在编译之前要先经过预编译器处理，然后再扔给<code>LLVM</code>处理、优化。<code>Objectice-C</code>编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-9338649a2784e917.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="123.png"></p>
-<p>如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说<code>LLVM</code>的作者<code>Chris Lattner</code> 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。<code>龙书</code>真容如下（快膜拜）：<br><img src="http://upload-images.jianshu.io/upload_images/1159872-a3e7a5906cf0eb1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="234.png"></p>
+        <p><code>Objective-C</code>源文件在编译之前要先经过预编译器处理，然后再扔给<code>LLVM</code>处理、优化。<code>Objectice-C</code>编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：<br><img src="https://github.com/Lves/lves.github.io/blob/master/images/20160524/101.png?raw=true" alt="123.png"></p>
+<p>如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说<code>LLVM</code>的作者<code>Chris Lattner</code> 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。<code>龙书</code>真容如下（快膜拜）：<br><img src="https://github.com/Lves/lves.github.io/blob/master/images/20160524/102.png?raw=true" alt="234.png"></p>
 <p>今天我们主要看看和预处理器（词法分析部分）相关的内容。预处理器处理过程主要包括三个步骤：</p>
 <ul>
 <li>文本翻译： 将输入的源文件分成代码行，并进行一些翻译处理。</li>
@@ -211,12 +211,12 @@ a^=b;
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
 </code></pre><hr>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http://www.lvesli.com/wp-content/uploads/2014/10/qrcode_for_gh_af22362bf4bb_258.jpg"></p>
+<p><img src="https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true" alt="icon"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciolac5f900033o0n3k9smixg" class="article-share-link">Поделиться</a>
+      <a data-url="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciolanqnt000062fy6nkbwhvz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +266,7 @@ a^=b;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciolac5f600023o0nmqhxt922" class="article-share-link">Поделиться</a>
+      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciolanqo4000362fygzfh7h89" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,12 +318,12 @@ $ pod setup
 <blockquote>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg" alt="http://upload-images.jianshu.io/upload_images/1159872-8126ca6ffcdbda50.jpg"></p>
+<p><img src="https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true" alt="https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciolac5f300013o0n4x784y18" class="article-share-link">Поделиться</a>
+      <a data-url="http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciolanqnz000162fyd04iskdv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -368,7 +368,7 @@ $ pod setup
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/20/hello-world/" data-id="ciolac5ex00003o0n2s2tcv2r" class="article-share-link">Поделиться</a>
+      <a data-url="http://lves.github.io/2016/05/20/hello-world/" data-id="ciolanqo2000262fyydo1mjk7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -393,7 +393,7 @@ $ pod setup
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Архив</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -403,7 +403,7 @@ $ pod setup
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Недавние записи</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -436,7 +436,7 @@ $ pod setup
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 LvesLi<br>
-      Создано с помощью <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
