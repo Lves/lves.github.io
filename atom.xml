@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lves.github.io/"/>
-  <updated>2016-05-24T10:23:21.000Z</updated>
+  <updated>2016-05-24T10:45:41.000Z</updated>
   <id>http://lves.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/"/>
     <id>http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/</id>
     <published>2016-05-24T01:38:28.000Z</published>
-    <updated>2016-05-24T10:23:21.000Z</updated>
+    <updated>2016-05-24T10:45:41.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;code&gt;Objective-C&lt;/code&gt;源文件在编译之前要先经过预编译器处理，然后再扔给&lt;code&gt;LLVM&lt;/code&gt;处理、优化。&lt;code&gt;Objectice-C&lt;/code&gt;编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/101.png?raw=true&quot; alt=&quot;123.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说&lt;code&gt;LLVM&lt;/code&gt;的作者&lt;code&gt;Chris Lattner&lt;/code&gt; 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。&lt;code&gt;龙书&lt;/code&gt;真容如下（快膜拜）：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/102.png?raw=true&quot; alt=&quot;234.png&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;code&gt;Objective-C&lt;/code&gt;源文件在编译之前要先经过预编译器处理，然后再扔给&lt;code&gt;LLVM&lt;/code&gt;处理、优化。&lt;code&gt;Objectice-C&lt;/code&gt;编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/101.png&quot; alt=&quot;123.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说&lt;code&gt;LLVM&lt;/code&gt;的作者&lt;code&gt;Chris Lattner&lt;/code&gt; 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。&lt;code&gt;龙书&lt;/code&gt;真容如下（快膜拜）：&lt;br&gt;&lt;img src=&quot;/img/20160524/102.png&quot; alt=&quot;234.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;今天我们主要看看和预处理器（词法分析部分）相关的内容。预处理器处理过程主要包括三个步骤：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;文本翻译： 将输入的源文件分成代码行，并进行一些翻译处理。&lt;/li&gt;
@@ -147,7 +147,7 @@ a^=b;
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -164,7 +164,7 @@ a^=b;
     <link href="http://lves.github.io/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
     <id>http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
     <published>2016-05-24T01:25:35.000Z</published>
-    <updated>2016-05-24T10:13:53.000Z</updated>
+    <updated>2016-05-24T10:44:39.000Z</updated>
     
     <content type="html">&lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
 &lt;ol&gt;
@@ -172,14 +172,14 @@ a^=b;
 &lt;li&gt;通过 scene dock  给ViewController附加view。&lt;/li&gt;
 &lt;li&gt;在storyboard上给 navigation bar添加多个button .&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;初始项目，在 &lt;code&gt;Main.storyboard&lt;/code&gt;中有一个 &lt;code&gt;TabBarViewController&lt;/code&gt;,它包含两个&lt;code&gt;HomeViewController&lt;/code&gt;和&lt;code&gt;UserViewController&lt;/code&gt;。&lt;br&gt;&lt;code&gt;HomeViewController&lt;/code&gt;是一个tableviewcontroller,点击cell进入&lt;code&gt;DetailViewController&lt;/code&gt;。UserViewcontroller是一个简单的ViewController。&lt;br&gt;Main.storyboard和项目目录如下图：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/001.png?raw=true&quot; alt=&quot;1.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/002.png?raw=true&quot; alt=&quot;2.png&quot;&gt;&lt;br&gt;  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/003.png?raw=true&quot; alt=&quot;3.png&quot;&gt;&lt;br&gt;运行项目效果如下：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/004.png?raw=true&quot; alt=&quot;4.png&quot;&gt;&lt;br&gt;今天我们先看一下它的第一个特性，&lt;code&gt;storyboard&lt;/code&gt;的分解和引用 （&lt;code&gt;storyboard references&lt;/code&gt;）。&lt;br&gt;用&lt;code&gt;storyboard&lt;/code&gt;做过开发的猿都知道，&lt;code&gt;storyboard&lt;/code&gt;会慢慢的变得越来越臃肿；&lt;br&gt;还有一个”致命“的弱点就是使用&lt;code&gt;Git&lt;/code&gt;进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！&lt;br&gt;即使我们可以使用多个&lt;code&gt;storyboard&lt;/code&gt;来解决但也无法实现使用&lt;code&gt;segue&lt;/code&gt;从一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;viewcontroller&lt;/code&gt; push到另一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;controller&lt;/code&gt;。&lt;br&gt;在Xcode7中这些问题通过&lt;code&gt;storyboard references&lt;/code&gt;都得到了很好的解决 。&lt;/p&gt;
+&lt;p&gt;初始项目，在 &lt;code&gt;Main.storyboard&lt;/code&gt;中有一个 &lt;code&gt;TabBarViewController&lt;/code&gt;,它包含两个&lt;code&gt;HomeViewController&lt;/code&gt;和&lt;code&gt;UserViewController&lt;/code&gt;。&lt;br&gt;&lt;code&gt;HomeViewController&lt;/code&gt;是一个tableviewcontroller,点击cell进入&lt;code&gt;DetailViewController&lt;/code&gt;。UserViewcontroller是一个简单的ViewController。&lt;br&gt;Main.storyboard和项目目录如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/001.png&quot; alt=&quot;1.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;/img/20160524/002.png&quot; alt=&quot;2.png&quot;&gt;&lt;br&gt;  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。&lt;br&gt;&lt;img src=&quot;/img/20160524/003.png&quot; alt=&quot;3.png&quot;&gt;&lt;br&gt;运行项目效果如下：&lt;br&gt;&lt;img src=&quot;/img/20160524/004.png&quot; alt=&quot;4.png&quot;&gt;&lt;br&gt;今天我们先看一下它的第一个特性，&lt;code&gt;storyboard&lt;/code&gt;的分解和引用 （&lt;code&gt;storyboard references&lt;/code&gt;）。&lt;br&gt;用&lt;code&gt;storyboard&lt;/code&gt;做过开发的猿都知道，&lt;code&gt;storyboard&lt;/code&gt;会慢慢的变得越来越臃肿；&lt;br&gt;还有一个”致命“的弱点就是使用&lt;code&gt;Git&lt;/code&gt;进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！&lt;br&gt;即使我们可以使用多个&lt;code&gt;storyboard&lt;/code&gt;来解决但也无法实现使用&lt;code&gt;segue&lt;/code&gt;从一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;viewcontroller&lt;/code&gt; push到另一个&lt;code&gt;storyboard&lt;/code&gt;中的&lt;code&gt;controller&lt;/code&gt;。&lt;br&gt;在Xcode7中这些问题通过&lt;code&gt;storyboard references&lt;/code&gt;都得到了很好的解决 。&lt;/p&gt;
 &lt;p&gt;###一、创建一个Storyboard引用&lt;/p&gt;
-&lt;p&gt;打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮&lt;br&gt; &lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/005.png?raw=true&quot; alt=&quot;5.png&quot;&gt;&lt;br&gt; &lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/006.png?raw=true&quot; alt=&quot;6.png&quot;&gt;&lt;br&gt;在弹出框中给新的storyboard起个新的名字Home.storyboard：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/007.png?raw=true&quot; alt=&quot;7.png&quot;&gt;&lt;br&gt;保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/008.png?raw=true&quot; alt=&quot;8.png&quot;&gt;&lt;br&gt;打开原来的的&lt;code&gt;Main.storyboard&lt;/code&gt;如下图，到此分解单个&lt;code&gt;storyboard&lt;/code&gt;称多个&lt;code&gt;storyboard&lt;/code&gt;就完成了，就这么简单。&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/009.png?raw=true&quot; alt=&quot;9.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;###二、在团队开发中使用Storyboard&lt;br&gt;&lt;code&gt;storyboard references&lt;/code&gt; 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？&lt;br&gt;首先打开&lt;code&gt;Main.storyboard&lt;/code&gt;从 &lt;code&gt;Object Library&lt;/code&gt;中托出一个&lt;code&gt;storyboard references&lt;/code&gt; 到&lt;code&gt;User Interface&lt;/code&gt;中，&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/010.png?raw=true&quot; alt=&quot;10.png&quot;&gt;&lt;br&gt;然后按住键盘&lt;code&gt;control&lt;/code&gt;键，点击鼠标左键从&lt;code&gt;TabBarController&lt;/code&gt;拖拽到 &lt;code&gt;storyboard reference&lt;/code&gt;，在弹出框中选择 &lt;code&gt;view controllers&lt;/code&gt;如下图：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/011.png?raw=true&quot; alt=&quot;11.png&quot;&gt;&lt;br&gt;选中 &lt;code&gt;storyboard reference&lt;/code&gt; 打开右侧&lt;code&gt;Attributes Inspector&lt;/code&gt; 设置&lt;code&gt;storyboard&lt;/code&gt; 为 &lt;code&gt;DiscoverStoryboard.storyboard&lt;/code&gt; 。好了到此添加一个已存在的storyboard成功。&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/012.png?raw=true&quot; alt=&quot;12.png&quot;&gt;&lt;br&gt;运行项目如下图所示：&lt;br&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/20160524/013.png?raw=true&quot; alt=&quot;13.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮&lt;br&gt; &lt;img src=&quot;/img/20160524/005.png&quot; alt=&quot;5.png&quot;&gt;&lt;br&gt; &lt;img src=&quot;/img/20160524/006.png&quot; alt=&quot;6.png&quot;&gt;&lt;br&gt;在弹出框中给新的storyboard起个新的名字Home.storyboard：&lt;br&gt;&lt;img src=&quot;/img/20160524/007.png&quot; alt=&quot;7.png&quot;&gt;&lt;br&gt;保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/008.png&quot; alt=&quot;8.png&quot;&gt;&lt;br&gt;打开原来的的&lt;code&gt;Main.storyboard&lt;/code&gt;如下图，到此分解单个&lt;code&gt;storyboard&lt;/code&gt;称多个&lt;code&gt;storyboard&lt;/code&gt;就完成了，就这么简单。&lt;br&gt;&lt;img src=&quot;/img/20160524/009.png&quot; alt=&quot;9.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###二、在团队开发中使用Storyboard&lt;br&gt;&lt;code&gt;storyboard references&lt;/code&gt; 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？&lt;br&gt;首先打开&lt;code&gt;Main.storyboard&lt;/code&gt;从 &lt;code&gt;Object Library&lt;/code&gt;中托出一个&lt;code&gt;storyboard references&lt;/code&gt; 到&lt;code&gt;User Interface&lt;/code&gt;中，&lt;br&gt;&lt;img src=&quot;/img/20160524/010.png&quot; alt=&quot;10.png&quot;&gt;&lt;br&gt;然后按住键盘&lt;code&gt;control&lt;/code&gt;键，点击鼠标左键从&lt;code&gt;TabBarController&lt;/code&gt;拖拽到 &lt;code&gt;storyboard reference&lt;/code&gt;，在弹出框中选择 &lt;code&gt;view controllers&lt;/code&gt;如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/011.png&quot; alt=&quot;11.png&quot;&gt;&lt;br&gt;选中 &lt;code&gt;storyboard reference&lt;/code&gt; 打开右侧&lt;code&gt;Attributes Inspector&lt;/code&gt; 设置&lt;code&gt;storyboard&lt;/code&gt; 为 &lt;code&gt;DiscoverStoryboard.storyboard&lt;/code&gt; 。好了到此添加一个已存在的storyboard成功。&lt;br&gt;&lt;img src=&quot;/img/20160524/012.png&quot; alt=&quot;12.png&quot;&gt;&lt;br&gt;运行项目如下图所示：&lt;br&gt;&lt;img src=&quot;/img/20160524/013.png&quot; alt=&quot;13.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot; alt=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;/img/icon.jpg&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -199,7 +199,7 @@ a^=b;
     <link href="http://lves.github.io/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
     <id>http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
     <published>2016-05-23T11:02:07.000Z</published>
-    <updated>2016-05-24T10:23:25.000Z</updated>
+    <updated>2016-05-24T10:46:08.000Z</updated>
     
     <content type="html">&lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not permitted &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&quot;一共有两种解决方案：&quot;&gt;&lt;a href=&quot;#一共有两种解决方案：&quot; class=&quot;headerlink&quot; title=&quot;一共有两种解决方案：&quot;&gt;&lt;/a&gt;一共有两种解决方案：&lt;/h4&gt;&lt;blockquote&gt;
@@ -221,7 +221,7 @@ $ pod setup
 &lt;blockquote&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot; alt=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -238,7 +238,7 @@ $ pod setup
     <link href="http://lves.github.io/2016/05/20/hello-world/"/>
     <id>http://lves.github.io/2016/05/20/hello-world/</id>
     <published>2016-05-20T11:39:41.000Z</published>
-    <updated>2016-05-24T10:34:53.000Z</updated>
+    <updated>2016-05-24T10:37:41.000Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
