@@ -3,17 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LvesLi&#39;s Blogging</title>
+  <title>Swift学习笔记之A Swift Tour | LvesLi&#39;s Blogging</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LvesLi's Blogging">
-<meta property="og:url" content="http://lves.github.io/index.html">
+  <meta name="description" content="Swift1.0的时候一时兴起学习了一下swift的基本语法，现在Swift已经更新到 2.1了,自己吧学到的也忘得差不多了，接下来重新复习一下。 
+今天先记录一下学习swift初见相关知识点。微信公众账号lecoding同步更新
+###1. if 条件语句 
+1234567//---------------------- 1.1  if 联系 ------------------------/v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习笔记之A Swift Tour">
+<meta property="og:url" content="http://lves.github.io/2016/05/25/A-Swift-Tour/index.html">
 <meta property="og:site_name" content="LvesLi's Blogging">
-<meta property="og:description">
+<meta property="og:description" content="Swift1.0的时候一时兴起学习了一下swift的基本语法，现在Swift已经更新到 2.1了,自己吧学到的也忘得差不多了，接下来重新复习一下。 
+今天先记录一下学习swift初见相关知识点。微信公众账号lecoding同步更新
+###1. if 条件语句 
+1234567//---------------------- 1.1  if 联系 ------------------------/v">
+<meta property="og:image" content="http://lves.github.io/img/icon.jpg">
+<meta property="og:updated_time" content="2016-05-25T01:20:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LvesLi's Blogging">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Swift学习笔记之A Swift Tour">
+<meta name="twitter:description" content="Swift1.0的时候一时兴起学习了一下swift的基本语法，现在Swift已经更新到 2.1了,自己吧学到的也忘得差不多了，接下来重新复习一下。 
+今天先记录一下学习swift初见相关知识点。微信公众账号lecoding同步更新
+###1. if 条件语句 
+1234567//---------------------- 1.1  if 联系 ------------------------/v">
+<meta name="twitter:image" content="http://lves.github.io/img/icon.jpg">
   
     <link rel="alternate" href="/atom.xml" title="LvesLi&#39;s Blogging" type="application/atom+xml">
   
@@ -62,9 +74,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-A-Swift-Tour" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-A-Swift-Tour" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/25/A-Swift-Tour/" class="article-date">
   <time datetime="2016-05-25T01:18:06.000Z" itemprop="datePublished">2016-05-25</time>
@@ -77,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/A-Swift-Tour/">Swift学习笔记之A Swift Tour</a>
+    <h1 class="article-title" itemprop="name">
+      Swift学习笔记之A Swift Tour
     </h1>
   
 
@@ -153,325 +163,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Objective-C-The-Preprocessor" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/24/Objective-C-The-Preprocessor/" class="article-date">
-  <time datetime="2016-05-24T01:38:28.000Z" itemprop="datePublished">2016-05-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/24/Objective-C-The-Preprocessor/">Objective-C 预处理器(The Preprocessor)</a>
-    </h1>
+    <a href="/2016/05/24/Objective-C-The-Preprocessor/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Objective-C 预处理器(The Preprocessor)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>Objective-C</code>源文件在编译之前要先经过预编译器处理，然后再扔给<code>LLVM</code>处理、优化。<code>Objectice-C</code>编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：<br><img src="/img/20160524/101.png" alt="123.png"></p>
-<p>如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说<code>LLVM</code>的作者<code>Chris Lattner</code> 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。<code>龙书</code>真容如下（快膜拜）：<br><img src="/img/20160524/102.png" alt="234.png"></p>
-<p>今天我们主要看看和预处理器（词法分析部分）相关的内容。预处理器处理过程主要包括三个步骤：</p>
-<ul>
-<li>文本翻译： 将输入的源文件分成代码行，并进行一些翻译处理。</li>
-<li>记号转换： 将上一步的处理结果转换成记号语言。</li>
-<li>基于预处理语言的转换： 如果上一步结果中含有预处理语言元素，就会进行转换。</li>
-</ul>
-<p>前两部是自动处理的，第三部要根据预处理语言函数进行处理，</p>
-<p>##预处理语言</p>
-<p>预处理语言对源文件进行转换主要包括文件引用、条件编译、宏展开。预处理语言定义了预处理指令和宏定义。预处理指令是预处理器执行的命令和编译器无关，宏定义只是一个具有名称的一段代码，在文件中会被预处理器替换成相应代码。</p>
-<p>###指令<br>指令的格式: <code>#指令名 指令参数</code> 例如</p>
-<pre><code>#import &quot;Student.h&quot;
-#define kBackColor  [UIColor redColor]
-</code></pre><p>指令主要包括以下四种：</p>
-<ul>
-<li>头文件引用</li>
-<li>条件编译</li>
-<li>错误诊断</li>
-<li>Pragma</li>
-</ul>
-<p>#####头文件引用</p>
-<p>头文件引用主要由<code>#inlude</code> 和<code>#import</code> 两种。每种又分为尖括号(<code>&lt;&gt;</code>)引用和双引号(<code>&quot; &quot;</code>)引用 。</p>
-<ol>
-<li><code>#inlude</code>  与 <code>#import</code> 的区别是： <code>#import</code> 不会造成重复引用，它会自己检查是否已经引用过，也可以防止递归包含。</li>
-<li>尖括号(<code>&lt;&gt;</code>)引用与双引号(<code>&quot; &quot;</code>)引用的区别是<ul>
-<li>双引号(<code>&quot; &quot;</code>)引用的文件，编译器会首先在存储源文件的同一目录下搜索，如果文件没有找到编译器会搜索默认目录（配置文件中配置的头文件引用目录）。</li>
-<li>尖括号(<code>&lt;&gt;</code>)引用 只会在默认目录下搜索。</li>
-</ul>
-</li>
-</ol>
-<p>#####条件编译<br>条件编译指令主要包括 (#if, #elif, #else, #endif, #ifdef, #ifndef) 利用他们可以选择性的编译代码。一个<code>#if</code>或者<code>#ifdef</code> 最后一定以<code>#endif</code>结束,中间写条件处理或者插入else指令。例如：</p>
-<p>   #ifdef, #ifndef</p>
-<pre><code>#ifdef DEBUG
-       NSLog (@&quot;File search complete. Found %i files&quot;, filecount&quot;);
-#endif
-</code></pre><p>   #if, #elif, #else, #endif</p>
-<pre><code>#if constant_expression
-
-#else
-
-#endif
-</code></pre><p>or</p>
-<pre><code>#if constant_expression
-
-#elif constant_expression
-
-#endif
-</code></pre><p>#####诊断指令<br>诊断指令主要包括 <code>#error</code> 和<code>#warning</code></p>
-<pre><code>#ifndef    ifOpen
-#error &quot;Not Open&quot;
-#endif
-</code></pre><p>如果进入到<code>#error</code>指令，则编译器不会往下执行，如果编译到<code>#warning</code>指令，只会显示一个警告信息，还会继续编译。</p>
-<p>#####Pragma指令</p>
-<p><code>pragma</code> 指令之一种编译器指令，它可以在特定平台下使用，像<code>mark</code>指令可以对代码进行分段标记，让代码更容易查找和跳转到指定位置。 我在自己的Controller中经常这样<code>mark</code>如下：</p>
-<pre><code>#pragma mark -
-#pragma mark Life Cycle
-
-#pragma mark -
-#pragma mark Private Method
-
-#pragma mark -
-#pragma mark Action
-
-#pragma mark -
-#pragma mark Setter&amp;Getter
-</code></pre><p>###宏定义</p>
-<p>宏定义就是对代码段起个名字，编译器编译之前预处理器会进行简单的字符串替换。宏定义可以进行简单的替换：</p>
-<pre><code>#define MY_CONSTANT 4
-</code></pre><p>也可以定义一个带参数的代码段 </p>
-<pre><code>#define SQUARE(x)  ((x) * (x))
-</code></pre><p>因为宏定义默认只支持一样，如果要定义多行时每行结尾要加一个斜线（<code>\</code>），最后一行不用。</p>
-<pre><code>#define SWAP(a, b) \
-a^=b;\
-b^=a;\
-a^=b;
-</code></pre><p>宏定义<code>枚举</code>和<code>Block</code>在`OC中经常使用。宏定义会在编译之前进行处理，而且一旦定义在其作用范围内都可以引用，可以提高编程效率。宏定义功能强大，当然宏定义也不能乱用它也存在确定，比如难以维护和查错。真机测试时定义太多的宏，当修改一个值就会重新编译好久。建议经常修改的值不要使用宏。一些宏能用常量替换的尽量使用常量。</p>
-<p>原文链接：<a href="http://www.lvesli.com/?p=386" target="_blank" rel="external">http://www.lvesli.com/?p=386</a>    微信公众账号同步更新：<code>lecoding</code><br>下面列出我自己项目中经常使用的宏定义：</p>
-<pre><code>//1. 打印日志
-#ifdef DEBUG
-#    define DLog(...) NSLog(__VA_ARGS__)
-#else
-#    define DLog(...)
-#endif
-
-//2. 获取屏幕 宽度、高度
-#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
-#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
-
-//3. 颜色
-#define RGB(r, g, b, a)  [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
-#define HEXCOLOR(c)       [UIColor colorWithRed:((c&gt;&gt;16)&amp;0xFF)/255.0f green:((c&gt;&gt;8)&amp;0xFF)/255.0f blue:(c&amp;0xFF)/255.0f alpha:1.0f]
-//背景色  
-#define BACKGROUND_COLOR [UIColor colorWithRed:242.0/255.0 green:236.0/255.0 blue:231.0/255.0 alpha:1.0]  
-//清除背景色  
-#define CLEARCOLOR [UIColor clearColor] 
-
-//4.加载图片宏：
-#define LOADIMAGE(file,type) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:type]]
-//5. NavBar高度
-#define NavigationBar_HEIGHT 44
-//6. 获取系统版本
-#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
-#define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]
-
-//7. 判断是真机还是模拟器
-#if TARGET_OS_IPHONE
-    //iPhone Device
-#endif
-
-#if TARGET_IPHONE_SIMULATOR
-   //iPhone Simulator
-#endif
-
-//8. 设置View的tag属性
-#define VIEWWITHTAG(_OBJECT, _TAG)    [_OBJECT viewWithTag : _TAG]
-
-//9. GCD
-#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
-#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
-
-//10. NSUserDefaults 实例化
-#define USER_DEFAULT [NSUserDefaults standardUserDefaults]
-</code></pre><hr>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-<p><img src="/img/icon.jpg" alt="icon"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciom6ow1j0002aifyiiqdp3a5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-iOS9-Storyboard新特性之Storyboard-References" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" class="article-date">
-  <time datetime="2016-05-24T01:25:35.000Z" itemprop="datePublished">2016-05-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/">iOS9 Storyboard新特性之 Storyboard References</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：</p>
-<ol>
-<li>分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。</li>
-<li>通过 scene dock  给ViewController附加view。</li>
-<li>在storyboard上给 navigation bar添加多个button .</li>
-</ol>
-<p>初始项目，在 <code>Main.storyboard</code>中有一个 <code>TabBarViewController</code>,它包含两个<code>HomeViewController</code>和<code>UserViewController</code>。<br><code>HomeViewController</code>是一个tableviewcontroller,点击cell进入<code>DetailViewController</code>。UserViewcontroller是一个简单的ViewController。<br>Main.storyboard和项目目录如下图：<br><img src="/img/20160524/001.png" alt="1.png"><br><img src="/img/20160524/002.png" alt="2.png"><br>  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。<br><img src="/img/20160524/003.png" alt="3.png"><br>运行项目效果如下：<br><img src="/img/20160524/004.png" alt="4.png"><br>今天我们先看一下它的第一个特性，<code>storyboard</code>的分解和引用 （<code>storyboard references</code>）。<br>用<code>storyboard</code>做过开发的猿都知道，<code>storyboard</code>会慢慢的变得越来越臃肿；<br>还有一个”致命“的弱点就是使用<code>Git</code>进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！<br>即使我们可以使用多个<code>storyboard</code>来解决但也无法实现使用<code>segue</code>从一个<code>storyboard</code>中的<code>viewcontroller</code> push到另一个<code>storyboard</code>中的<code>controller</code>。<br>在Xcode7中这些问题通过<code>storyboard references</code>都得到了很好的解决 。</p>
-<p>###一、创建一个Storyboard引用</p>
-<p>打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮<br> <img src="/img/20160524/005.png" alt="5.png"><br> <img src="/img/20160524/006.png" alt="6.png"><br>在弹出框中给新的storyboard起个新的名字Home.storyboard：<br><img src="/img/20160524/007.png" alt="7.png"><br>保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：<br><img src="/img/20160524/008.png" alt="8.png"><br>打开原来的的<code>Main.storyboard</code>如下图，到此分解单个<code>storyboard</code>称多个<code>storyboard</code>就完成了，就这么简单。<br><img src="/img/20160524/009.png" alt="9.png"></p>
-<p>###二、在团队开发中使用Storyboard<br><code>storyboard references</code> 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？<br>首先打开<code>Main.storyboard</code>从 <code>Object Library</code>中托出一个<code>storyboard references</code> 到<code>User Interface</code>中，<br><img src="/img/20160524/010.png" alt="10.png"><br>然后按住键盘<code>control</code>键，点击鼠标左键从<code>TabBarController</code>拖拽到 <code>storyboard reference</code>，在弹出框中选择 <code>view controllers</code>如下图：<br><img src="/img/20160524/011.png" alt="11.png"><br>选中 <code>storyboard reference</code> 打开右侧<code>Attributes Inspector</code> 设置<code>storyboard</code> 为 <code>DiscoverStoryboard.storyboard</code> 。好了到此添加一个已存在的storyboard成功。<br><img src="/img/20160524/012.png" alt="12.png"><br>运行项目如下图所示：<br><img src="/img/20160524/013.png" alt="13.png"></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/" target="_blank" rel="external">http://www.lvesli.com</a> </em></strong></p>
-<hr>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-<p><img src="/img/icon.jpg" alt="/img/icon.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciom6ow1o0004aifyrvaato3a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-OS-X-10-11-安装Cocoapods失败：Operation-not-permitted" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" class="article-date">
-  <time datetime="2016-05-23T11:02:07.000Z" itemprop="datePublished">2016-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/">OS X 10.11 安装Cocoapods失败：Operation not permitted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   系统升级到 <strong><em> OS X 10.11 </em></strong>  (EI Capitan)的时候，当安装 <strong> CocoaPods </strong> 的时候提示如下的错误：<strong><em> Operation not permitted </em></strong></p>
-<h4 id="一共有两种解决方案："><a href="#一共有两种解决方案：" class="headerlink" title="一共有两种解决方案："></a>一共有两种解决方案：</h4><blockquote>
-<p>1.官方解决方案；</p>
-<p>2.github解决方案，安装在其他目录（我采用的方案）；</p>
-</blockquote>
-<h5 id="1-官方给出的解决方式是：自定义-GEM-HOME"><a href="#1-官方给出的解决方式是：自定义-GEM-HOME" class="headerlink" title="1.官方给出的解决方式是：自定义 GEM_HOME"></a>1.官方给出的解决方式是：自定义 GEM_HOME</h5><pre><code>$ mkdir -p $HOME/Software/ruby
-$ export GEM_HOME=$HOME/Software/ruby
-$ gem install cocoapods
-[...]
-1 gem installed
-$ export PATH=$PATH:$HOME/Software/ruby/bin
-$ pod --version
-0.37.2  
-</code></pre><h5 id="Github-解决方案"><a href="#Github-解决方案" class="headerlink" title="Github 解决方案"></a>Github 解决方案</h5><pre><code>$ sudo gem install -n /usr/local/bin cocoapods
-$ pod setup
-</code></pre><p>建议开通VPN安装会快点，如果你没有vpn也可以参照一下<strong><em> 唐巧 </em></strong>的一篇博客：<a href="http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency" target="_blank" rel="external">链接</a></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/" target="_blank" rel="external">http://lvesli.com</a> </em></strong></p>
-<blockquote>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-</blockquote>
-<p><img src="/img/icon.jpg" alt="https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciom6ow1g0001aify7tljl7wx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/20/hello-world/" class="article-date">
-  <time datetime="2016-05-20T11:39:41.000Z" itemprop="datePublished">2016-05-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<p><img src="/img/icon.jpg" alt="icon"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/20/hello-world/" data-id="ciom6ow1m0003aifym35xbv8b" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
