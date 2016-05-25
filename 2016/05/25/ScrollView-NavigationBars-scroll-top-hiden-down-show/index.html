@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示 | LvesLi&#39;s Blogging</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我司产品🐶突然喜欢上了知乎和简书的的那种上滑加载更多时隐藏NavigationBar,下拉时显示的那种效果。那些阅读类APP需要沉浸式体验隐藏导航栏无可厚非，我就纳闷一个P2P类软件你隐藏个毛线！废话少说，技术很好实现几行代码的事。
+在包含TableView或者ScrollView的.m文件中加入以下代码:
+在页面即将消失时显示NavigationBar,让下一个页面显示时NavigationB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示">
+<meta property="og:url" content="http://lves.github.io/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/index.html">
+<meta property="og:site_name" content="LvesLi's Blogging">
+<meta property="og:description" content="我司产品🐶突然喜欢上了知乎和简书的的那种上滑加载更多时隐藏NavigationBar,下拉时显示的那种效果。那些阅读类APP需要沉浸式体验隐藏导航栏无可厚非，我就纳闷一个P2P类软件你隐藏个毛线！废话少说，技术很好实现几行代码的事。
+在包含TableView或者ScrollView的.m文件中加入以下代码:
+在页面即将消失时显示NavigationBar,让下一个页面显示时NavigationB">
+<meta property="og:image" content="http://lves.github.io/img/icon.jpg">
+<meta property="og:updated_time" content="2016-05-25T01:37:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示">
+<meta name="twitter:description" content="我司产品🐶突然喜欢上了知乎和简书的的那种上滑加载更多时隐藏NavigationBar,下拉时显示的那种效果。那些阅读类APP需要沉浸式体验隐藏导航栏无可厚非，我就纳闷一个P2P类软件你隐藏个毛线！废话少说，技术很好实现几行代码的事。
+在包含TableView或者ScrollView的.m文件中加入以下代码:
+在页面即将消失时显示NavigationBar,让下一个页面显示时NavigationB">
+<meta name="twitter:image" content="http://lves.github.io/img/icon.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="LvesLi&#39;s Blogging" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LvesLi&#39;s Blogging</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lves.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ScrollView-NavigationBars-scroll-top-hiden-down-show" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" class="article-date">
+  <time datetime="2016-05-25T01:27:49.000Z" itemprop="datePublished">2016-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我司产品🐶突然喜欢上了<code>知乎</code>和<code>简书</code>的的那种上滑加载更多时隐藏<code>NavigationBar</code>,下拉时显示的那种效果。那些阅读类APP需要<code>沉浸式体验</code>隐藏导航栏无可厚非，我就纳闷一个P2P类软件你隐藏个毛线！废话少说，技术很好实现几行代码的事。</p>
+<p>在包含<code>TableView</code>或者<code>ScrollView</code>的.m文件中加入以下代码:</p>
+<p>在页面即将消失时显示NavigationBar,让下一个页面显示时<code>NavigationBar</code>显示状态:</p>
+<pre><code>//滑动隐藏导航栏 LiXingLe
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+
+    self.navigationController.navigationBarHidden = NO;
+
+}
+</code></pre><p>实现<code>ScrollView</code>的代理：</p>
+<pre><code>#pragma mark 滑动隐藏导航栏
+//滑动隐藏导航栏 LiXingLe
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+
+    if(velocity.y&gt;0)
+
+    {
+
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+    }
+
+    else
+
+    {
+
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+    }
+
+}
+</code></pre><p>现在运行一下如果上滑的时候顶部没有变黑就OK了，如果NavigationBar 隐藏后顶部变黑，加上下面的代码，<br>在<code>viewDidLoad</code>中添加：</p>
+<pre><code>//滑动隐藏导航栏 LiXingLe
+
+if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+
+      self.edgesForExtendedLayout = UIRectEdgeNone;
+</code></pre><hr>
+<p>更多iOS、Swift开发精彩内容请移步<a href="http://lvesli.com" target="_blank" rel="external">http://lvesli.com</a>或者关注我们的微信公众账号</p>
+<p>微信公众账号：<code>lecoding</code>同步更新,你也可以扫描下方二维码关注我们。</p>
+<p><img src="/img/icon.jpg" alt="icon"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lves.github.io/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" data-id="ciom7jtji0004grfy8ju9o1g3" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/25/QRScanner/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          扫码神奇-二维码、条形码扫描，二维码创建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/25/Swift-Closures/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Swift基础之闭包</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/25/Avoiding-Wechat-RedPicture/">微信朋友圈红包照片绕过方法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/25/QRScanner/">扫码神奇-二维码、条形码扫描，二维码创建</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/">iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/25/Swift-Closures/">Swift基础之闭包</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/25/A-Swift-Tour/">Swift学习笔记之A Swift Tour</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LvesLi<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
