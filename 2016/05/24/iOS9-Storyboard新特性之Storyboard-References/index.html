@@ -14,7 +14,7 @@
 初始">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS9 Storyboard新特性之 Storyboard References">
-<meta property="og:url" content="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/index.html">
+<meta property="og:url" content="http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/index.html">
 <meta property="og:site_name" content="LvesLi's Blogging">
 <meta property="og:description" content="今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：
 
@@ -23,20 +23,20 @@
 在storyboard上给 navigation bar添加多个button .
 
 初始">
-<meta property="og:image" content="http://lves.github.io/img/20160524/001.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/002.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/003.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/004.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/005.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/006.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/007.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/008.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/009.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/010.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/011.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/012.png">
-<meta property="og:image" content="http://lves.github.io/img/20160524/013.png">
-<meta property="og:image" content="http://lves.github.io/img/icon.jpg">
+<meta property="og:image" content="http://lvesli.com/img/20160524/001.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/002.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/003.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/004.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/005.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/006.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/007.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/008.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/009.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/010.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/011.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/012.png">
+<meta property="og:image" content="http://lvesli.com/img/20160524/013.png">
+<meta property="og:image" content="http://lvesli.com/img/icon.jpg">
 <meta property="og:updated_time" content="2016-05-24T10:44:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9 Storyboard新特性之 Storyboard References">
@@ -47,7 +47,7 @@
 在storyboard上给 navigation bar添加多个button .
 
 初始">
-<meta name="twitter:image" content="http://lves.github.io/img/20160524/001.png">
+<meta name="twitter:image" content="http://lvesli.com/img/20160524/001.png">
   
     <link rel="alternate" href="/atom.xml" title="LvesLi&#39;s Blogging" type="application/atom+xml">
   
@@ -90,7 +90,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lves.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lvesli.com"></form>
       </div>
     </div>
   </div>
@@ -128,7 +128,7 @@
 <p>###一、创建一个Storyboard引用</p>
 <p>打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮<br> <img src="/img/20160524/005.png" alt="5.png"><br> <img src="/img/20160524/006.png" alt="6.png"><br>在弹出框中给新的storyboard起个新的名字Home.storyboard：<br><img src="/img/20160524/007.png" alt="7.png"><br>保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：<br><img src="/img/20160524/008.png" alt="8.png"><br>打开原来的的<code>Main.storyboard</code>如下图，到此分解单个<code>storyboard</code>称多个<code>storyboard</code>就完成了，就这么简单。<br><img src="/img/20160524/009.png" alt="9.png"></p>
 <p>###二、在团队开发中使用Storyboard<br><code>storyboard references</code> 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？<br>首先打开<code>Main.storyboard</code>从 <code>Object Library</code>中托出一个<code>storyboard references</code> 到<code>User Interface</code>中，<br><img src="/img/20160524/010.png" alt="10.png"><br>然后按住键盘<code>control</code>键，点击鼠标左键从<code>TabBarController</code>拖拽到 <code>storyboard reference</code>，在弹出框中选择 <code>view controllers</code>如下图：<br><img src="/img/20160524/011.png" alt="11.png"><br>选中 <code>storyboard reference</code> 打开右侧<code>Attributes Inspector</code> 设置<code>storyboard</code> 为 <code>DiscoverStoryboard.storyboard</code> 。好了到此添加一个已存在的storyboard成功。<br><img src="/img/20160524/012.png" alt="12.png"><br>运行项目如下图所示：<br><img src="/img/20160524/013.png" alt="13.png"></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/" target="_blank" rel="external">http://www.lvesli.com</a> </em></strong></p>
+<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/">http://www.lvesli.com</a> </em></strong></p>
 <hr>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
 <p><img src="/img/icon.jpg" alt="/img/icon.jpg"></p>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciom7jtjs0008grfyvericq52" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciom91cne0008xkfynphstim4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -181,7 +181,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

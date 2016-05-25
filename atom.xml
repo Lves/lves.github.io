@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://lves.github.io/"/>
+  <link href="http://lvesli.com/"/>
   <updated>2016-05-25T01:44:07.000Z</updated>
-  <id>http://lves.github.io/</id>
+  <id>http://lvesli.com/</id>
   
   <author>
     <name>LvesLi</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>微信朋友圈红包照片绕过方法</title>
-    <link href="http://lves.github.io/2016/05/25/Avoiding-Wechat-RedPicture/"/>
-    <id>http://lves.github.io/2016/05/25/Avoiding-Wechat-RedPicture/</id>
+    <link href="http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/"/>
+    <id>http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/</id>
     <published>2016-05-25T01:30:55.000Z</published>
     <updated>2016-05-25T01:44:07.000Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>扫码神奇-二维码、条形码扫描，二维码创建</title>
-    <link href="http://lves.github.io/2016/05/25/QRScanner/"/>
-    <id>http://lves.github.io/2016/05/25/QRScanner/</id>
+    <link href="http://lvesli.com/2016/05/25/QRScanner/"/>
+    <id>http://lvesli.com/2016/05/25/QRScanner/</id>
     <published>2016-05-25T01:28:38.000Z</published>
     <updated>2016-05-25T01:41:53.000Z</updated>
     
@@ -77,8 +77,8 @@
   
   <entry>
     <title>iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示</title>
-    <link href="http://lves.github.io/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/"/>
-    <id>http://lves.github.io/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/</id>
+    <link href="http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/"/>
+    <id>http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/</id>
     <published>2016-05-25T01:27:49.000Z</published>
     <updated>2016-05-25T01:37:11.000Z</updated>
     
@@ -122,7 +122,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 
       self.edgesForExtendedLayout = UIRectEdgeNone;
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;p&gt;更多iOS、Swift开发精彩内容请移步&lt;a href=&quot;http://lvesli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lvesli.com&lt;/a&gt;或者关注我们的微信公众账号&lt;/p&gt;
+&lt;p&gt;更多iOS、Swift开发精彩内容请移步&lt;a href=&quot;http://lvesli.com&quot;&gt;http://lvesli.com&lt;/a&gt;或者关注我们的微信公众账号&lt;/p&gt;
 &lt;p&gt;微信公众账号：&lt;code&gt;lecoding&lt;/code&gt;同步更新,你也可以扫描下方二维码关注我们。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
 </content>
@@ -138,8 +138,8 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
   
   <entry>
     <title>Swift基础之闭包</title>
-    <link href="http://lves.github.io/2016/05/25/Swift-Closures/"/>
-    <id>http://lves.github.io/2016/05/25/Swift-Closures/</id>
+    <link href="http://lvesli.com/2016/05/25/Swift-Closures/"/>
+    <id>http://lvesli.com/2016/05/25/Swift-Closures/</id>
     <published>2016-05-25T01:26:11.000Z</published>
     <updated>2016-05-25T01:33:45.000Z</updated>
     
@@ -191,7 +191,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 &lt;p&gt;非逃逸闭包和逃逸闭包讲的不是执行先后顺序吧,非逃逸是指你的闭包不能在函数外单独调用,只能在函数内部调用,函数调用完成后,那个闭包也就结束了。&lt;/p&gt;
 &lt;p&gt;下面举个逃逸闭包的例子：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//声明一个存放函数的数组&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var functionArray: [() -&amp;gt; Void] = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//定义一个接收闭包参数的函数，如果定义非逃逸函数 func doSomething(@noescape paramClosure:() -&amp;gt; Void) 就会编译错误&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func doSomething(paramClosure:() -&amp;gt; Void)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //把参数放入数组中，用于逃逸调用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    functionArray.append(paramClosure)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//调用函数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;doSomething(&amp;#123;print(&amp;quot;Hello world&amp;quot;)&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;doSomething(&amp;#123;print(&amp;quot;Hello LvesLi&amp;quot;)&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//逃逸调用闭包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for closurePrama in functionArray &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(&amp;quot;\(closurePrama)&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;更多iOS、Swift开发精彩文章请访问&lt;a href=&quot;http://lvesli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lvesli.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多iOS、Swift开发精彩文章请访问&lt;a href=&quot;http://lvesli.com&quot;&gt;http://lvesli.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;微信公众账号：&lt;code&gt;lecoding&lt;/code&gt;同步更新,你也可以扫描下方二维码关注我们。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
 </content>
@@ -213,8 +213,8 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
   
   <entry>
     <title>Swift学习笔记之A Swift Tour</title>
-    <link href="http://lves.github.io/2016/05/25/A-Swift-Tour/"/>
-    <id>http://lves.github.io/2016/05/25/A-Swift-Tour/</id>
+    <link href="http://lvesli.com/2016/05/25/A-Swift-Tour/"/>
+    <id>http://lvesli.com/2016/05/25/A-Swift-Tour/</id>
     <published>2016-05-25T01:18:06.000Z</published>
     <updated>2016-05-25T01:20:11.000Z</updated>
     
@@ -289,8 +289,8 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
   
   <entry>
     <title>Objective-C 预处理器(The Preprocessor)</title>
-    <link href="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/"/>
-    <id>http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/</id>
+    <link href="http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/"/>
+    <id>http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/</id>
     <published>2016-05-24T01:38:28.000Z</published>
     <updated>2016-05-24T10:45:41.000Z</updated>
     
@@ -433,8 +433,8 @@ a^=b;
   
   <entry>
     <title>iOS9 Storyboard新特性之 Storyboard References</title>
-    <link href="http://lves.github.io/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
-    <id>http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
+    <link href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
+    <id>http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
     <published>2016-05-24T01:25:35.000Z</published>
     <updated>2016-05-24T10:44:39.000Z</updated>
     
@@ -448,7 +448,7 @@ a^=b;
 &lt;p&gt;###一、创建一个Storyboard引用&lt;/p&gt;
 &lt;p&gt;打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮&lt;br&gt; &lt;img src=&quot;/img/20160524/005.png&quot; alt=&quot;5.png&quot;&gt;&lt;br&gt; &lt;img src=&quot;/img/20160524/006.png&quot; alt=&quot;6.png&quot;&gt;&lt;br&gt;在弹出框中给新的storyboard起个新的名字Home.storyboard：&lt;br&gt;&lt;img src=&quot;/img/20160524/007.png&quot; alt=&quot;7.png&quot;&gt;&lt;br&gt;保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/008.png&quot; alt=&quot;8.png&quot;&gt;&lt;br&gt;打开原来的的&lt;code&gt;Main.storyboard&lt;/code&gt;如下图，到此分解单个&lt;code&gt;storyboard&lt;/code&gt;称多个&lt;code&gt;storyboard&lt;/code&gt;就完成了，就这么简单。&lt;br&gt;&lt;img src=&quot;/img/20160524/009.png&quot; alt=&quot;9.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;###二、在团队开发中使用Storyboard&lt;br&gt;&lt;code&gt;storyboard references&lt;/code&gt; 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？&lt;br&gt;首先打开&lt;code&gt;Main.storyboard&lt;/code&gt;从 &lt;code&gt;Object Library&lt;/code&gt;中托出一个&lt;code&gt;storyboard references&lt;/code&gt; 到&lt;code&gt;User Interface&lt;/code&gt;中，&lt;br&gt;&lt;img src=&quot;/img/20160524/010.png&quot; alt=&quot;10.png&quot;&gt;&lt;br&gt;然后按住键盘&lt;code&gt;control&lt;/code&gt;键，点击鼠标左键从&lt;code&gt;TabBarController&lt;/code&gt;拖拽到 &lt;code&gt;storyboard reference&lt;/code&gt;，在弹出框中选择 &lt;code&gt;view controllers&lt;/code&gt;如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/011.png&quot; alt=&quot;11.png&quot;&gt;&lt;br&gt;选中 &lt;code&gt;storyboard reference&lt;/code&gt; 打开右侧&lt;code&gt;Attributes Inspector&lt;/code&gt; 设置&lt;code&gt;storyboard&lt;/code&gt; 为 &lt;code&gt;DiscoverStoryboard.storyboard&lt;/code&gt; 。好了到此添加一个已存在的storyboard成功。&lt;br&gt;&lt;img src=&quot;/img/20160524/012.png&quot; alt=&quot;12.png&quot;&gt;&lt;br&gt;运行项目如下图所示：&lt;br&gt;&lt;img src=&quot;/img/20160524/013.png&quot; alt=&quot;13.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/&quot;&gt;http://www.lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;/img/icon.jpg&quot;&gt;&lt;/p&gt;
@@ -468,8 +468,8 @@ a^=b;
   
   <entry>
     <title>OS X 10.11 安装Cocoapods失败：Operation not permitted</title>
-    <link href="http://lves.github.io/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
-    <id>http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
+    <link href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
+    <id>http://lvesli.com/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
     <published>2016-05-23T11:02:07.000Z</published>
     <updated>2016-05-24T10:46:08.000Z</updated>
     
@@ -489,7 +489,7 @@ $ pod --version
 &lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&quot;Github-解决方案&quot;&gt;&lt;a href=&quot;#Github-解决方案&quot; class=&quot;headerlink&quot; title=&quot;Github 解决方案&quot;&gt;&lt;/a&gt;Github 解决方案&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;$ sudo gem install -n /usr/local/bin cocoapods
 $ pod setup
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;建议开通VPN安装会快点，如果你没有vpn也可以参照一下&lt;strong&gt;&lt;em&gt; 唐巧 &lt;/em&gt;&lt;/strong&gt;的一篇博客：&lt;a href=&quot;http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; 原文链接：&lt;a href=&quot;http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/&quot;&gt;http://lvesli.com&lt;/a&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -507,8 +507,8 @@ $ pod setup
   
   <entry>
     <title>Hello World</title>
-    <link href="http://lves.github.io/2016/05/20/hello-world/"/>
-    <id>http://lves.github.io/2016/05/20/hello-world/</id>
+    <link href="http://lvesli.com/2016/05/20/hello-world/"/>
+    <id>http://lvesli.com/2016/05/20/hello-world/</id>
     <published>2016-05-20T11:39:41.000Z</published>
     <updated>2016-05-24T10:37:41.000Z</updated>
     

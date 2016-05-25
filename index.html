@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LvesLi's Blogging">
-<meta property="og:url" content="http://lves.github.io/index.html">
+<meta property="og:url" content="http://lvesli.com/index.html">
 <meta property="og:site_name" content="LvesLi's Blogging">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -56,7 +56,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lves.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lvesli.com"></form>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/25/Avoiding-Wechat-RedPicture/" data-id="ciom7jtj50000grfyqi6bj7pe" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/" data-id="ciom91cmh0001xkfy4dm9pd1m" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -147,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/25/QRScanner/" data-id="ciom7jtjd0002grfysth7iix4" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/25/QRScanner/" data-id="ciom91cmq0004xkfy6fw37obq" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -219,14 +219,14 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 
       self.edgesForExtendedLayout = UIRectEdgeNone;
 </code></pre><hr>
-<p>更多iOS、Swift开发精彩内容请移步<a href="http://lvesli.com" target="_blank" rel="external">http://lvesli.com</a>或者关注我们的微信公众账号</p>
+<p>更多iOS、Swift开发精彩内容请移步<a href="http://lvesli.com">http://lvesli.com</a>或者关注我们的微信公众账号</p>
 <p>微信公众账号：<code>lecoding</code>同步更新,你也可以扫描下方二维码关注我们。</p>
 <p><img src="/img/icon.jpg" alt="icon"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" data-id="ciom7jtji0004grfy8ju9o1g3" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" data-id="ciom91cms0005xkfy8t1gpubj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -306,14 +306,14 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 <p>非逃逸闭包和逃逸闭包讲的不是执行先后顺序吧,非逃逸是指你的闭包不能在函数外单独调用,只能在函数内部调用,函数调用完成后,那个闭包也就结束了。</p>
 <p>下面举个逃逸闭包的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//声明一个存放函数的数组</span><br><span class="line">var functionArray: [() -&gt; Void] = []</span><br><span class="line">//定义一个接收闭包参数的函数，如果定义非逃逸函数 func doSomething(@noescape paramClosure:() -&gt; Void) 就会编译错误</span><br><span class="line">func doSomething(paramClosure:() -&gt; Void)&#123;</span><br><span class="line">    //把参数放入数组中，用于逃逸调用</span><br><span class="line">    functionArray.append(paramClosure)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//调用函数</span><br><span class="line"></span><br><span class="line">doSomething(&#123;print(&quot;Hello world&quot;)&#125;)</span><br><span class="line"></span><br><span class="line">doSomething(&#123;print(&quot;Hello LvesLi&quot;)&#125;)</span><br><span class="line"></span><br><span class="line">//逃逸调用闭包</span><br><span class="line">for closurePrama in functionArray &#123;</span><br><span class="line"></span><br><span class="line">    print(&quot;\(closurePrama)&quot;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>更多iOS、Swift开发精彩文章请访问<a href="http://lvesli.com" target="_blank" rel="external">http://lvesli.com</a></p>
+<p>更多iOS、Swift开发精彩文章请访问<a href="http://lvesli.com">http://lvesli.com</a></p>
 <p>微信公众账号：<code>lecoding</code>同步更新,你也可以扫描下方二维码关注我们。</p>
 <p><img src="/img/icon.jpg" alt="icon"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/25/Swift-Closures/" data-id="ciom7jtjl0006grfy9n3lw9fh" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/25/Swift-Closures/" data-id="ciom91cmv0006xkfymf71vpsy" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -406,7 +406,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/25/A-Swift-Tour/" data-id="ciom7jtja0001grfy7inydtmk" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/25/A-Swift-Tour/" data-id="ciom91cma0000xkfyod393yh8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -568,7 +568,7 @@ a^=b;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciom7jtjj0005grfyyr5m7y0n" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciom91cmo0003xkfyb6krqm3r" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -610,7 +610,7 @@ a^=b;
 <p>###一、创建一个Storyboard引用</p>
 <p>打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮<br> <img src="/img/20160524/005.png" alt="5.png"><br> <img src="/img/20160524/006.png" alt="6.png"><br>在弹出框中给新的storyboard起个新的名字Home.storyboard：<br><img src="/img/20160524/007.png" alt="7.png"><br>保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：<br><img src="/img/20160524/008.png" alt="8.png"><br>打开原来的的<code>Main.storyboard</code>如下图，到此分解单个<code>storyboard</code>称多个<code>storyboard</code>就完成了，就这么简单。<br><img src="/img/20160524/009.png" alt="9.png"></p>
 <p>###二、在团队开发中使用Storyboard<br><code>storyboard references</code> 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？<br>首先打开<code>Main.storyboard</code>从 <code>Object Library</code>中托出一个<code>storyboard references</code> 到<code>User Interface</code>中，<br><img src="/img/20160524/010.png" alt="10.png"><br>然后按住键盘<code>control</code>键，点击鼠标左键从<code>TabBarController</code>拖拽到 <code>storyboard reference</code>，在弹出框中选择 <code>view controllers</code>如下图：<br><img src="/img/20160524/011.png" alt="11.png"><br>选中 <code>storyboard reference</code> 打开右侧<code>Attributes Inspector</code> 设置<code>storyboard</code> 为 <code>DiscoverStoryboard.storyboard</code> 。好了到此添加一个已存在的storyboard成功。<br><img src="/img/20160524/012.png" alt="12.png"><br>运行项目如下图所示：<br><img src="/img/20160524/013.png" alt="13.png"></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/" target="_blank" rel="external">http://www.lvesli.com</a> </em></strong></p>
+<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/">http://www.lvesli.com</a> </em></strong></p>
 <hr>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
 <p><img src="/img/icon.jpg" alt="/img/icon.jpg"></p>
@@ -618,7 +618,7 @@ a^=b;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciom7jtjs0008grfyvericq52" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciom91cne0008xkfynphstim4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -666,7 +666,7 @@ $ pod --version
 </code></pre><h5 id="Github-解决方案"><a href="#Github-解决方案" class="headerlink" title="Github 解决方案"></a>Github 解决方案</h5><pre><code>$ sudo gem install -n /usr/local/bin cocoapods
 $ pod setup
 </code></pre><p>建议开通VPN安装会快点，如果你没有vpn也可以参照一下<strong><em> 唐巧 </em></strong>的一篇博客：<a href="http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency" target="_blank" rel="external">链接</a></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/" target="_blank" rel="external">http://lvesli.com</a> </em></strong></p>
+<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/">http://lvesli.com</a> </em></strong></p>
 <blockquote>
 <p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
 </blockquote>
@@ -675,7 +675,7 @@ $ pod setup
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciom7jtjg0003grfy8bilrto6" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciom91cmk0002xkfy4ydoqmu6" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -721,7 +721,7 @@ $ pod setup
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lves.github.io/2016/05/20/hello-world/" data-id="ciom7jtjo0007grfywqqft4a0" class="article-share-link">Partager</a>
+      <a data-url="http://lvesli.com/2016/05/20/hello-world/" data-id="ciom91cmy0007xkfytevmbrk9" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -748,7 +748,7 @@ $ pod setup
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
