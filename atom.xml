@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvesli.com/"/>
-  <updated>2016-05-25T01:44:07.000Z</updated>
+  <updated>2016-05-26T01:37:11.000Z</updated>
   <id>http://lvesli.com/</id>
   
   <author>
@@ -14,6 +14,461 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS二维码扫描和创建(下)</title>
+    <link href="http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/"/>
+    <id>http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/</id>
+    <published>2016-05-26T01:30:56.000Z</published>
+    <updated>2016-05-26T01:37:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在上一篇文章《二维码扫描和创建（上）》中我们已经介绍了三种扫描二维码的方式和如何扫描相册中的二维码图片，想查看的可以关注我们的微信公众号：&lt;code&gt;lecoding&lt;/code&gt; ,里边有更多 &lt;code&gt;iOS&lt;/code&gt;开发精彩文章。今天我们谈谈我了解到关于创建二维码的几种方式。&lt;/p&gt;
+&lt;p&gt;我在iPhone APP &lt;code&gt;扫码神奇&lt;/code&gt;中使用的就是下面第二种方法，大家可以到APPStore搜索&lt;code&gt;扫码神奇&lt;/code&gt;,下载体验一下（记得给个好评呦）。&lt;code&gt;扫码神奇&lt;/code&gt;下载链接：&lt;br&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/id1074173840&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://itunes.apple.com/cn/app/id1074173840&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160526/001.png&quot; alt=&quot;icon108.png&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;libqrencode&quot;&gt;&lt;a href=&quot;#libqrencode&quot; class=&quot;headerlink&quot; title=&quot;libqrencode&quot;&gt;&lt;/a&gt;libqrencode&lt;/h3&gt;&lt;p&gt;源文件我已经上传到百度网盘 下载链接：&lt;a href=&quot;http://pan.baidu.com/s/1qXrFOq4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1qXrFOq4&lt;/a&gt; ，&lt;code&gt;github&lt;/code&gt;链接：&lt;a href=&quot;https://github.com/fukuchi/libqrencode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/fukuchi/libqrencode&lt;/a&gt;  ,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载解压后，把文件夹拖入项目中&lt;/li&gt;
+&lt;li&gt;文件中加入以下框架：&lt;code&gt;AVFoundation.framework、CoreMedia.framework、CoreVideo.framework、QuartzCore.framework、libiconv.dylib&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;需要使用的页面.m文件中引用头文件&lt;code&gt;#import &amp;quot;QRCodeGenerator.h&amp;quot;&lt;/code&gt;&lt;br&gt;生成二维码只需要一行代码：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;UIImage *image = [QRCodeGenerator qrImageForString:self.codeString imageSize:self.imageView_Code.bounds.size.width];  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用&lt;code&gt;libqrencode&lt;/code&gt; 生成二维码无法生成彩色二维码。下面可以看看原生的可以实现生成彩色二维码。&lt;/p&gt;
+&lt;p&gt;###原生&lt;/p&gt;
+&lt;p&gt;我在网上找到了一种不使用第三方库创建彩色二维码的方式，分享给大家：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//
+
+//  LLQRGenerator.m
+
+//  QRenManager
+
+//
+
+//  Created by LiXingLe on 16/1/12.
+
+//  Copyright © 2016年 com.wildcat. All rights reserved.
+
+//
+
+
+
+#import &amp;quot;LLQRGenerator.h&amp;quot;
+
+
+
+
+
+@implementation LLQRGenerator
+
+
+
++ (UIImage *) getQRImageWithContent:(NSString *)content red:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue{
+
+
+
+    // 1.创建滤镜
+
+    CIFilter *filter = [CIFilter filterWithName:@&amp;quot;CIQRCodeGenerator&amp;quot;];
+
+
+
+    // 2.还原滤镜默认属性
+
+    [filter setDefaults];
+
+
+
+    // 3.设置需要生成二维码的数据到滤镜中
+
+    // OC中要求设置的是一个二进制数据
+
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+
+    [filter setValue:data forKeyPath:@&amp;quot;InputMessage&amp;quot;];
+
+
+
+    // 4.从滤镜从取出生成好的二维码图片
+
+    CIImage *ciImage = [filter outputImage];
+
+
+
+   return  [self createNonInterpolatedUIImageFormCIImage:ciImage size:500 withRed:red green:green blue:blue];
+
+
+
+}
+
+
+
+
+
+
+
+
+
+//生成高清二维码方法
+
++ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)ciImage size:(CGFloat)widthAndHeight withRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue
+
+{
+
+    CGRect extentRect = CGRectIntegral(ciImage.extent);
+
+    CGFloat scale = MIN(widthAndHeight / CGRectGetWidth(extentRect), widthAndHeight / CGRectGetHeight(extentRect));
+
+
+
+    // 1.创建bitmap;
+
+    size_t width = CGRectGetWidth(extentRect) * scale;
+
+    size_t height = CGRectGetHeight(extentRect) * scale;
+
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+
+
+
+    CIContext *context = [CIContext contextWithOptions:nil];
+
+
+
+    CGImageRef bitmapImage = [context createCGImage:ciImage fromRect:extentRect];
+
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+
+    CGContextScaleCTM(bitmapRef, scale, scale);
+
+    CGContextDrawImage(bitmapRef, extentRect, bitmapImage);
+
+
+
+    // 保存bitmap到图片
+
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+
+    CGContextRelease(bitmapRef);
+
+    CGImageRelease(bitmapImage);
+
+
+
+    //return [UIImage imageWithCGImage:scaledImage]; // 黑白图片
+
+    UIImage *newImage = [UIImage imageWithCGImage:scaledImage];
+
+    return [self imageBlackToTransparent:newImage withRed:red andGreen:green andBlue:blue];
+
+}
+
+
+
+void ProviderReleaseData (void *info, const void *data, size_t size){
+
+    free((void*)data);
+
+}
+
+//设置图片透明度
+
++ (UIImage*)imageBlackToTransparent:(UIImage*)image withRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue{
+
+    const int imageWidth = image.size.width;
+
+    const int imageHeight = image.size.height;
+
+    size_t      bytesPerRow = imageWidth * 4;
+
+    uint32_t* rgbImageBuf = (uint32_t*)malloc(bytesPerRow * imageHeight);
+
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+
+    CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, 8, bytesPerRow, colorSpace,
+
+                                                 kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
+
+    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), image.CGImage);
+
+    // 遍历像素
+
+    int pixelNum = imageWidth * imageHeight;
+
+    uint32_t* pCurPtr = rgbImageBuf;
+
+    for (int i = 0; i &amp;lt; pixelNum; i++, pCurPtr++){
+
+        if ((*pCurPtr &amp;amp; 0xFFFFFF00) &amp;lt; 0x99999900)
+
+        {
+
+            uint8_t* ptr = (uint8_t*)pCurPtr;
+
+            ptr[3] = red; //0~255
+
+            ptr[2] = green;
+
+            ptr[1] = blue;
+
+        }
+
+        else
+
+        {
+
+            uint8_t* ptr = (uint8_t*)pCurPtr;
+
+            ptr[0] = 0;
+
+        }
+
+    }
+
+    // 输出图片
+
+    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rgbImageBuf, bytesPerRow * imageHeight, ProviderReleaseData);
+
+    CGImageRef imageRef = CGImageCreate(imageWidth, imageHeight, 8, 32, bytesPerRow, colorSpace,
+
+                                        kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider,
+
+                                        NULL, true, kCGRenderingIntentDefault);
+
+    CGDataProviderRelease(dataProvider);
+
+    UIImage* resultUIImage = [UIImage imageWithCGImage:imageRef];
+
+    // 清理空间
+
+    CGImageRelease(imageRef);
+
+    CGContextRelease(context);
+
+    CGColorSpaceRelease(colorSpace);
+
+    return resultUIImage;
+
+}
+
+
+
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;扫描二维码和创建二维码项目展示：APPStore搜索&lt;code&gt;扫码神奇&lt;/code&gt;(记得给个好评呦)。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;转载请注明，版权归&lt;a href=&quot;http://lvesli.com&quot;&gt;http://lvesli.com&lt;/a&gt;所有。&lt;/p&gt;
+&lt;p&gt;更多&lt;code&gt;iOS&lt;/code&gt;、&lt;code&gt;Android&lt;/code&gt;精彩文章请关注微信公众账号：&lt;code&gt;lecoding&lt;/code&gt;,你也可以扫描下方二维码关注我们。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在上一篇文章《二维码扫描和创建（上）》中我们已经介绍了三种扫描二维码的方式和如何扫描相册中的二维码图片，想查看的可以关注我们的微信公众号：&lt;code&gt;lecoding&lt;/code&gt; ,里边有更多 &lt;code&gt;iOS&lt;/code&gt;开发精彩文章。今天我们谈谈我了解到关于创建二维
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>二维码扫描和创建（上）</title>
+    <link href="http://lvesli.com/2016/05/26/QRImage-scann-and-create/"/>
+    <id>http://lvesli.com/2016/05/26/QRImage-scann-and-create/</id>
+    <published>2016-05-26T01:30:27.000Z</published>
+    <updated>2016-05-26T01:34:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/20160525/001.png&quot; alt=&quot;saomashengqi.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;##扫描二维码（包括读取和解码）&lt;/p&gt;
+&lt;p&gt;扫描二维码&lt;code&gt;OC&lt;/code&gt;的开源库有&lt;code&gt;ZBar和ZXing&lt;/code&gt;。&lt;code&gt;iOS7&lt;/code&gt;以后iOS拥有原生的扫码功能。&lt;br&gt;我在iPhone项目&lt;code&gt;扫码神奇&lt;/code&gt;中使用的就是下面第三种方法，大家可以到APPStore搜索&lt;code&gt;扫码神奇&lt;/code&gt;,下载体验一下（记得给个好评呦）。&lt;code&gt;扫码神奇&lt;/code&gt;下载链接：&lt;br&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/id1074173840&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://itunes.apple.com/cn/app/id1074173840&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160526/001.png&quot; alt=&quot;icon108.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;好了下面是具体实现介绍：&lt;/p&gt;
+&lt;h3 id=&quot;ZXing&quot;&gt;&lt;a href=&quot;#ZXing&quot; class=&quot;headerlink&quot; title=&quot;ZXing&quot;&gt;&lt;/a&gt;ZXing&lt;/h3&gt;&lt;p&gt; 现在&lt;code&gt;OC&lt;/code&gt;版本已经停止维护，Java版本还在维护，&lt;code&gt;github&lt;/code&gt;链接：&lt;a href=&quot;https://github.com/zxing/zxing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/zxing/zxing&lt;/a&gt;，现在也很少有人使用，在&lt;code&gt;唐巧&lt;/code&gt;的一篇12年&lt;a href=&quot;http://blog.devtang.com/blog/2012/12/23/use-zxing-library/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.devtang.com/blog/2012/12/23/use-zxing-library/&lt;/a&gt;文章中有关于&lt;code&gt;ZXing的&lt;/code&gt;配置过程，不过好像他好久没有更新了。&lt;code&gt;ZXing&lt;/code&gt;相对于&lt;code&gt;ZBar&lt;/code&gt;的好处是读取和扫码速度快，但是整合到&lt;code&gt;Xcode&lt;/code&gt;项目中比较痛苦。&lt;/p&gt;
+&lt;h3 id=&quot;ZBar&quot;&gt;&lt;a href=&quot;#ZBar&quot; class=&quot;headerlink&quot; title=&quot;ZBar&quot;&gt;&lt;/a&gt;ZBar&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ZBar&lt;/code&gt; 的&lt;code&gt;github&lt;/code&gt;地址：&lt;a href=&quot;https://github.com/bmorton/ZBarSDK&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/bmorton/ZBarSDK&lt;/a&gt; ，在github上下载的&lt;code&gt;.a&lt;/code&gt;文件不支持&lt;code&gt;64位&lt;/code&gt;，好像也有好今年没有更新了，不过我在网上找到了支持64位的&lt;code&gt;.a&lt;/code&gt;文件，下载链接：&lt;a href=&quot;https://markobl.com/2015/03/27/zbar-sdk-64-bit-for-iphone-6-and-ios-8-download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://markobl.com/2015/03/27/zbar-sdk-64-bit-for-iphone-6-and-ios-8-download/&lt;/a&gt; ，下面说一下&lt;code&gt;ZBar&lt;/code&gt;的集成步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从&lt;a href=&quot;https://github.com/bmorton/ZBarSDK&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;上下载源文件,解压后如下图，把Headers文件夹拖入到项目中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;从&lt;a href=&quot;https://markobl.com/2015/03/27/zbar-sdk-64-bit-for-iphone-6-and-ios-8-download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;64位.a文件&lt;/a&gt;下载支持64位的.a文件，添加到项目中&lt;/li&gt;
+&lt;li&gt;在新工程中导入以下框架：&lt;code&gt;AVFoundation.framework、CoreMedia.framework、CoreVideo.framework、QuartzCore.framework、libiconv.dylib&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在需要使用的页面&lt;code&gt;.h&lt;/code&gt;文件中引用头文件&lt;code&gt;#import &amp;quot;ZBarSDK.h&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;.m&lt;/code&gt;文件中在点击开始扫描的按钮中实现：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ZBarReaderViewController *reader = [ZBarReaderViewController new];  
+  reader.readerDelegate = self;  
+reader.supportedOrientationsMask = ZBarOrientationMaskAll;  
+
+  ZBarImageScanner *scanner = reader.scanner;  
+  [scanner setSymbology: ZBAR_I25  
+                 config: ZBAR_CFG_ENABLE  
+                     to: 0];  
+  [self presentViewController:reader  
+                     animated:YES  
+                   completion:^{  
+  }];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还要实现&lt;code&gt;代理&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- (void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info{
+      id&amp;lt;NSFastEnumeration&amp;gt; results = [info objectForKey: ZBarReaderControllerResults];  
+      ZBarSymbol *symbol = nil;  
+      for(symbol in results)  
+          break;      
+      [self dismissViewControllerAnimated:YES  
+                           completion:^{  
+                           }];  
+    NSString *code = [NSString stringWithString:symbol.data];  
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;ZBar&lt;/code&gt;有一个弊端，因为他是静态文件，所以自定义相机比较困难，只能进行简单的修改，我尝试实现微信扫码效果没有实现。&lt;/p&gt;
+&lt;p&gt;###iOS原生扫码&lt;/p&gt;
+&lt;p&gt;iOS7以后APPle有了自己原生的扫码接口，我当然要义无反顾地选择使用原生的了，下面是我在项目中的部分代码：&lt;br&gt;在.m文件中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;
+@interface SysScannerController ()&amp;lt;AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate&amp;gt;
+@property (nonatomic, strong) AVCaptureSession *session;//输入输出的中间桥梁
+@property (strong,nonatomic)AVCaptureDevice *device;
+@property (strong,nonatomic)AVCaptureDeviceInput *input;
+@property (strong,nonatomic)AVCaptureMetadataOutput *output;
+@property (strong,nonatomic)AVCaptureVideoPreviewLayer *preview;
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;懒加载：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#pragma mark - Setter &amp;amp; Getter
+-(UIView *)line{
+    if (_line == nil) {
+        _line = [[UIView alloc] initWithFrame:CGRectMake((ScreenFrameWith-180)/2, ScreenFrameHeight/3.f, 180, 4)];
+        _line.backgroundColor=[UIColor whiteColor];
+        [self.view addSubview:_line];
+    }
+    return _line;
+}
+
+-(AVCaptureDevice *)device{
+    if (_device == nil) {
+        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+    return _device;
+}
+-(AVCaptureDeviceInput *)input{
+    if (_input == nil) {
+        _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+    }
+    return _input;
+}
+-(AVCaptureMetadataOutput *)output{
+    if (_output == nil) {
+        _output = [[AVCaptureMetadataOutput alloc]init];
+        [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+        //限制扫描区域（上左下右）
+        [ _output setRectOfInterest : CGRectMake (1/6.f,1/6.f,4/6.f,4/6.f)];
+    }
+    return _output;
+}
+
+- (AVCaptureSession *)session{
+    if (_session == nil) {
+        // Session
+        _session = [[AVCaptureSession alloc]init];
+        [_session setSessionPreset:AVCaptureSessionPresetHigh];
+        if ([_session canAddInput:self.input])
+        {
+            [_session addInput:self.input];
+        }
+
+        if ([_session canAddOutput:self.output])
+        {
+            [_session addOutput:self.output];
+        }
+    }
+    return _session;
+}
+
+-(AVCaptureVideoPreviewLayer *)preview{
+    if (_preview == nil) {
+        _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
+
+    }
+    return _preview;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在&lt;code&gt;-viewDidLoad&lt;/code&gt;中调用下面函数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- (void)setupCamera
+{
+    //1.
+    if(self.device == nil){
+        [self showAlertTipWithTitle:@&amp;quot;未检测到相机&amp;quot; andMessage:@&amp;quot;请检查相机设备是否正常&amp;quot;];
+        return ;
+    }
+    // 2.添加预览图层
+    [self.view.layer insertSublayer:self.preview atIndex:0];
+    self.preview.frame = self.view.bounds;
+    // 3.设置输出能够解析的数据类型
+    // 注意点: 设置数据类型一定要在输出对象添加到会话之后才能设置
+    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+    // 4.设置监听监听输出解析到的数据
+    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    // 5.开始扫描
+    [self.session startRunning];
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;实现&lt;code&gt;AVCaptureMetadataOutputObjectsDelegate&lt;/code&gt; 代理：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#pragma mark AVCaptureMetadataOutputObjectsDelegate
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+{
+
+    if ([metadataObjects count] &amp;gt;0)
+    {
+        AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
+
+        if ([metadataObject isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
+            NSString *stringValue = [metadataObject stringValue];
+            if (stringValue != nil) {
+                [self.session stopRunning];
+                //扫描结果
+                self.scannedResult=stringValue;
+            }
+
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;iOS原生的扫码界面你可以随意的自定义了，和自定义相机一样，这里就不做介绍了。&lt;/p&gt;
+&lt;p&gt;###扫描相册中的二维码&lt;/p&gt;
+&lt;p&gt;扫描相册中的二维码，首先打开相册然后先在UIImagePickerControllerDelegate代理方法中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; #pragma mark - imagePickerController delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //1.获取选择的图片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    //2.初始化一个监测器
+    CIDetector*detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{ CIDetectorAccuracy : CIDetectorAccuracyHigh }];
+
+    [picker dismissViewControllerAnimated:YES completion:^{
+        //监测到的结果数组
+        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
+        if (features.count &amp;gt;=1) {
+            /**结果对象 */
+            CIQRCodeFeature *feature = [features objectAtIndex:0];
+            NSString *scannedResult = feature.messageString;
+            self.scannedResult=scannedResult;
+            [self performSegueWithIdentifier:@&amp;quot;ToResult&amp;quot; sender:self];
+        }
+        else{
+            [self showAlertTipWithTitle:@&amp;quot;提示&amp;quot; andMessage:@&amp;quot;该图片没有包含一个二维码！&amp;quot;];
+        }
+    }];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;好了，关于扫描二维码今天就说到这，下一篇我会分享创建二维码功能。扫描二维码和创建二维码项目展示：APPStore搜索&lt;code&gt;扫码神奇&lt;/code&gt;(记得给个好评呦)。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;更多精彩文章请关注微信公众账号：&lt;code&gt;lecoding&lt;/code&gt;,你也可以扫描下方二维码关注我们。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/20160525/001.png&quot; alt=&quot;saomashengqi.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;##扫描二维码（包括读取和解码）&lt;/p&gt;
+&lt;p&gt;扫描二维码&lt;code&gt;OC&lt;/code&gt;的开源库有&lt;code&gt;ZBar和ZXing&lt;/code&gt;。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>微信朋友圈红包照片绕过方法</title>
