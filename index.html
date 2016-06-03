@@ -48,12 +48,14 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
+          <a class="main-nav-link" href="/">About</a>
+        
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lvesli.com"></form>
@@ -63,6 +65,60 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-苹果开放了CloudKit对服务器到服务器端的请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/" class="article-date">
+  <time datetime="2016-06-03T06:20:18.000Z" itemprop="datePublished">2016-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/">苹果开放了CloudKit对服务器到服务器端的请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>苹果最近<a href="https://developer.apple.com/news/?id=02042016a" target="_blank" rel="external">宣布</a>可以连接苹果云平台的<code>OS X</code>和<code>iOS</code>版<code>CloudKit</code>框架，现在已经对<code>服务器到服务器</code>的网络请求进行了开放。它消除了以前只有<code>iOS和MAC</code>应用才能连接到<code>CloudKit</code>公共数据库的限制，使服务器直达苹果web站点。</p>
+<p><code>CloudKit</code>服务器到服务器的请求在原来已有特性的基础上新添加了允许开发者提供网络接口，使用户能访问自己的iCloud数据。服务器到服务器的请求根本目的是提供访问<code>iCloud</code>公共数据的权限，也为<code>Parse</code>关闭<code>DBaaS</code>在一定程度上提供了另外一种选择。</p>
+<p>为了从服务器端程序或者脚本读取或写入数据到<code>CloudKit</code>数据库中，程序员首先需要使用<code>OpenSLL</code>生成钥匙串：</p>
+<pre><code>openssl ecparam -name prime256v1 -genkey -noout -out eckey.pem
+</code></pre><p>然后，开发者应该到<a href="https://icloud.developer.apple.com/dashboard" target="_blank" rel="external">CloudKit故事版</a>拿着公钥换取访问服务器的私钥。一旦输入公钥，作为网络服务请求子路径的<code>KeyID</code>就会立刻生成。苹果提供了一些开发者如何使用新的方式认证<code>CloudKit</code>的<a href="https://developer.apple.com/library/ios/samplecode/CloudAtlas/Listings/Node_node_client_s2s_README_md.html#//apple_ref/doc/uid/TP40014599-Node_node_client_s2s_README_md-DontLinkElementID_200" target="_blank" rel="external">JavaScript简单代码</a>，如下：</p>
+<pre><code>[Current date]:[Request body]:[Web Service URL]
+</code></pre><p>苹果还提供了使用<code>curl</code>来请求的简单代码，如下：</p>
+<pre><code>curl -X POST -H &quot;content-type: text/plain&quot; -H &quot;X-Apple-CloudKit-Request-KeyID: [keyID]” -H &quot;X-Apple-CloudKit-Request-ISO8601Date: [date]&quot; -H &quot;X-Apple-CloudKit-Request-SignatureV1: [signature]&quot; -d &apos;{&quot;users&quot;:[{&quot;emailAddress&quot;:&quot;[user email]&quot;}]}&apos; https://api.apple-cloudkit.com/database/1/[container ID]/development/public/users/lookup/email
+</code></pre><p><a href="http://stackoverflow.com/questions/35247436/cloudkit-server-to-server-authentication/35254094" target="_blank" rel="external">Stack Overflow上的一些用户</a>也提供了<code>JavaScript，PHP和Python</code>语言的替代实现。</p>
+<p><code>CloudKit</code>给开发者提供了包括身份认证，私有和公共数据库，结构化的一些服务，例如基于plist，资产存储。</p>
+<p>原文翻译自<a href="http://www.infoq.com/news/2016/02/cloudkit-server-to-server" target="_blank" rel="external">InfoQ</a></p>
+<blockquote>
+<p>更多<code>iOS</code>、<code>Android</code>精彩文章请关注微信公众账号：<code>lecoding</code>,你也可以扫描下方二维码关注我们。</p>
+</blockquote>
+<p><img src="/img/icon.jpg" alt="qrcode_for_gh_af22362bf4bb_258.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lvesli.com/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/" data-id="ciozk4xhz000b1ifyo1qt4tuu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+ 
+
+
   
     <article id="post-QRImage-scann-and-create-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -327,7 +383,7 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/" data-id="ciozc1vqh0003gffy6f8k1fku" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/" data-id="ciozk4xhd00041ifyyuq4l816" class="article-share-link">Share</a>
       
       
     </footer>
@@ -546,7 +602,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/26/QRImage-scann-and-create/" data-id="ciozc1vqj0004gffyjusf2sj4" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/26/QRImage-scann-and-create/" data-id="ciozk4xhe00051ifyddqz9fvt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -590,7 +646,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/" data-id="ciozc1vq50000gffy127dg2tn" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/" data-id="ciozk4xh100001ifyhfpyvofh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -645,7 +701,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/25/QRScanner/" data-id="ciozc1vqr0007gffyqdi0k5jc" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/25/QRScanner/" data-id="ciozk4xhi00061ifyiqflmkp3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -727,7 +783,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" data-id="ciozc1vqo0006gffyiehoijyt" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/" data-id="ciozk4xhm00071ifyb4e164tl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -817,7 +873,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/25/Swift-Closures/" data-id="ciozc1vre0009gffy5xl6d7ec" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/25/Swift-Closures/" data-id="ciozk4xhn00081ify12q5q289" class="article-share-link">Share</a>
       
       
     </footer>
@@ -913,7 +969,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/25/A-Swift-Tour/" data-id="ciozc1vqm0005gffykdsoh2tn" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/25/A-Swift-Tour/" data-id="ciozk4xh600011ifysnj6ua4c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1078,7 +1134,7 @@ a^=b;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciozc1vqb0001gffydl1kgrfv" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/" data-id="ciozk4xhc00031ifysjqx457o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1097,6 +1153,10 @@ a^=b;
   <time datetime="2016-05-24T01:25:35.000Z" itemprop="datePublished">2016-05-24</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/About/">About</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -1113,87 +1173,24 @@ a^=b;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：</p>
+        <p>Xcode7给storyboard带来了以下特性：</p>
 <ol>
 <li>分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。</li>
 <li>通过 scene dock  给ViewController附加view。</li>
-<li>在storyboard上给 navigation bar添加多个button .</li>
-</ol>
-<p>初始项目，在 <code>Main.storyboard</code>中有一个 <code>TabBarViewController</code>,它包含两个<code>HomeViewController</code>和<code>UserViewController</code>。<br><code>HomeViewController</code>是一个tableviewcontroller,点击cell进入<code>DetailViewController</code>。UserViewcontroller是一个简单的ViewController。<br>Main.storyboard和项目目录如下图：<br><img src="/img/20160524/001.png" alt="1.png"><br><img src="/img/20160524/002.png" alt="2.png"><br>  项目中还有一个未使用的DiscoverStoryboard.storyboard ，在这个storyboard中只有一个简单的Controller，稍后我们会用到。<br><img src="/img/20160524/003.png" alt="3.png"><br>运行项目效果如下：<br><img src="/img/20160524/004.png" alt="4.png"><br>今天我们先看一下它的第一个特性，<code>storyboard</code>的分解和引用 （<code>storyboard references</code>）。<br>用<code>storyboard</code>做过开发的猿都知道，<code>storyboard</code>会慢慢的变得越来越臃肿；<br>还有一个”致命“的弱点就是使用<code>Git</code>进行多人开发的时候经常造成冲突，让我们猿们无法忍受只想摔键盘啊！<br>即使我们可以使用多个<code>storyboard</code>来解决但也无法实现使用<code>segue</code>从一个<code>storyboard</code>中的<code>viewcontroller</code> push到另一个<code>storyboard</code>中的<code>controller</code>。<br>在Xcode7中这些问题通过<code>storyboard references</code>都得到了很好的解决 。</p>
-<p>###一、创建一个Storyboard引用</p>
-<p>打开Main.stroyboard选中HomeController对应的三个controller如下图，然后点击菜单栏【Editor】选项中的【Refactor to storyboard…】按钮<br> <img src="/img/20160524/005.png" alt="5.png"><br> <img src="/img/20160524/006.png" alt="6.png"><br>在弹出框中给新的storyboard起个新的名字Home.storyboard：<br><img src="/img/20160524/007.png" alt="7.png"><br>保存后，你会发现目录中多了一个Home.storybaord。打开原来的Main.storyboard你会发现原理的Homecontroller变成了一个storyboard references。选中这个storyboard references  在右侧Attributes Inspector中显示如下图：<br><img src="/img/20160524/008.png" alt="8.png"><br>打开原来的的<code>Main.storyboard</code>如下图，到此分解单个<code>storyboard</code>称多个<code>storyboard</code>就完成了，就这么简单。<br><img src="/img/20160524/009.png" alt="9.png"></p>
-<p>###二、在团队开发中使用Storyboard<br><code>storyboard references</code> 还有另外一种使用情况，当我们开发多个功能模块时可能会出现，不同的人在自己的storyboard中开发然后通过storyboard references  把不同的功能模块连接起来。在上边说过我们有一个DiscoverStoryboard.storyboard 还没有用到，如何快速的把第三个功能模块合进来？<br>首先打开<code>Main.storyboard</code>从 <code>Object Library</code>中托出一个<code>storyboard references</code> 到<code>User Interface</code>中，<br><img src="/img/20160524/010.png" alt="10.png"><br>然后按住键盘<code>control</code>键，点击鼠标左键从<code>TabBarController</code>拖拽到 <code>storyboard reference</code>，在弹出框中选择 <code>view controllers</code>如下图：<br><img src="/img/20160524/011.png" alt="11.png"><br>选中 <code>storyboard reference</code> 打开右侧<code>Attributes Inspector</code> 设置<code>storyboard</code> 为 <code>DiscoverStoryboard.storyboard</code> 。好了到此添加一个已存在的storyboard成功。<br><img src="/img/20160524/012.png" alt="12.png"><br>运行项目如下图所示：<br><img src="/img/20160524/013.png" alt="13.png"></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/">http://www.lvesli.com</a> </em></strong></p>
-<hr>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-<p><img src="/img/icon.jpg" alt="/img/icon.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciozc1vra0008gffynmdeeyqv" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
- 
-
-
-  
-    <article id="post-OS-X-10-11-安装Cocoapods失败：Operation-not-permitted" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" class="article-date">
-  <time datetime="2016-05-23T11:02:07.000Z" itemprop="datePublished">2016-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<li>在storyboard上给 navigation bar添加多个button .
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/">OS X 10.11 安装Cocoapods失败：Operation not permitted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   系统升级到 <strong><em> OS X 10.11 </em></strong>  (EI Capitan)的时候，当安装 <strong> CocoaPods </strong> 的时候提示如下的错误：<strong><em> Operation not permitted </em></strong></p>
-<h4 id="一共有两种解决方案："><a href="#一共有两种解决方案：" class="headerlink" title="一共有两种解决方案："></a>一共有两种解决方案：</h4><blockquote>
-<p>1.官方解决方案；</p>
-<p>2.github解决方案，安装在其他目录（我采用的方案）；</p>
-</blockquote>
-<h5 id="1-官方给出的解决方式是：自定义-GEM-HOME"><a href="#1-官方给出的解决方式是：自定义-GEM-HOME" class="headerlink" title="1.官方给出的解决方式是：自定义 GEM_HOME"></a>1.官方给出的解决方式是：自定义 GEM_HOME</h5><pre><code>$ mkdir -p $HOME/Software/ruby
-$ export GEM_HOME=$HOME/Software/ruby
-$ gem install cocoapods
-[...]
-1 gem installed
-$ export PATH=$PATH:$HOME/Software/ruby/bin
-$ pod --version
-0.37.2  
-</code></pre><h5 id="Github-解决方案"><a href="#Github-解决方案" class="headerlink" title="Github 解决方案"></a>Github 解决方案</h5><pre><code>$ sudo gem install -n /usr/local/bin cocoapods
-$ pod setup
-</code></pre><p>建议开通VPN安装会快点，如果你没有vpn也可以参照一下<strong><em> 唐巧 </em></strong>的一篇博客：<a href="http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency" target="_blank" rel="external">链接</a></p>
-<p><strong><em> 原文链接：<a href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/">http://lvesli.com</a> </em></strong></p>
-<blockquote>
-<p>本博客也会在 <strong><em> lecoding </em></strong> 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：<strong><em> 乐Coding </em></strong> 或者 <strong><em> lecoding </em></strong> 或者微信扫描下方二维码：</p>
-</blockquote>
-<p><img src="/img/icon.jpg" alt="https://github.com/Lves/lves.github.io/blob/master/images/icon.jpg?raw=true"></p>
-
+          <p class="article-more-link">
+            <a href="/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lvesli.com/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/" data-id="ciozc1vqe0002gffyzq6pe8i4" class="article-share-link">Delen</a>
+      <a data-url="http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/" data-id="ciozk4xhu000a1ifygo2ye1py" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
     </footer>
   </div>
   
@@ -1214,18 +1211,10 @@ $ pod setup
           <aside id="sidebar">
   
     
-
-  
-    
-
-  
-    
-  
-    
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1233,9 +1222,42 @@ $ pod setup
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/">苹果开放了CloudKit对服务器到服务器端的请求</a>
+          </li>
         
           <li>
             <a href="/2016/05/26/QRImage-scann-and-create-2/">iOS二维码扫描和创建(下)</a>
@@ -1251,10 +1273,6 @@ $ pod setup
         
           <li>
             <a href="/2016/05/25/QRScanner/">扫码神奇-二维码、条形码扫描，二维码创建</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/">iOS 实现ScrollView 上滑隐藏Navigationbar,下滑显示</a>
           </li>
         
       </ul>
@@ -1280,6 +1298,8 @@ $ pod setup
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
   
 </nav>
     

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvesli.com/"/>
-  <updated>2016-05-26T01:37:11.000Z</updated>
+  <updated>2016-06-03T06:21:09.000Z</updated>
   <id>http://lvesli.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>苹果开放了CloudKit对服务器到服务器端的请求</title>
+    <link href="http://lvesli.com/2016/06/03/%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%94%BE%E4%BA%86CloudKit%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%9A%84%E8%AF%B7%E6%B1%82/"/>
+    <id>http://lvesli.com/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/</id>
+    <published>2016-06-03T06:20:18.000Z</published>
+    <updated>2016-06-03T06:21:09.000Z</updated>
+    
+    <content type="html">&lt;p&gt;苹果最近&lt;a href=&quot;https://developer.apple.com/news/?id=02042016a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;宣布&lt;/a&gt;可以连接苹果云平台的&lt;code&gt;OS X&lt;/code&gt;和&lt;code&gt;iOS&lt;/code&gt;版&lt;code&gt;CloudKit&lt;/code&gt;框架，现在已经对&lt;code&gt;服务器到服务器&lt;/code&gt;的网络请求进行了开放。它消除了以前只有&lt;code&gt;iOS和MAC&lt;/code&gt;应用才能连接到&lt;code&gt;CloudKit&lt;/code&gt;公共数据库的限制，使服务器直达苹果web站点。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CloudKit&lt;/code&gt;服务器到服务器的请求在原来已有特性的基础上新添加了允许开发者提供网络接口，使用户能访问自己的iCloud数据。服务器到服务器的请求根本目的是提供访问&lt;code&gt;iCloud&lt;/code&gt;公共数据的权限，也为&lt;code&gt;Parse&lt;/code&gt;关闭&lt;code&gt;DBaaS&lt;/code&gt;在一定程度上提供了另外一种选择。&lt;/p&gt;
+&lt;p&gt;为了从服务器端程序或者脚本读取或写入数据到&lt;code&gt;CloudKit&lt;/code&gt;数据库中，程序员首先需要使用&lt;code&gt;OpenSLL&lt;/code&gt;生成钥匙串：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openssl ecparam -name prime256v1 -genkey -noout -out eckey.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后，开发者应该到&lt;a href=&quot;https://icloud.developer.apple.com/dashboard&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CloudKit故事版&lt;/a&gt;拿着公钥换取访问服务器的私钥。一旦输入公钥，作为网络服务请求子路径的&lt;code&gt;KeyID&lt;/code&gt;就会立刻生成。苹果提供了一些开发者如何使用新的方式认证&lt;code&gt;CloudKit&lt;/code&gt;的&lt;a href=&quot;https://developer.apple.com/library/ios/samplecode/CloudAtlas/Listings/Node_node_client_s2s_README_md.html#//apple_ref/doc/uid/TP40014599-Node_node_client_s2s_README_md-DontLinkElementID_200&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JavaScript简单代码&lt;/a&gt;，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Current date]:[Request body]:[Web Service URL]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;苹果还提供了使用&lt;code&gt;curl&lt;/code&gt;来请求的简单代码，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST -H &amp;quot;content-type: text/plain&amp;quot; -H &amp;quot;X-Apple-CloudKit-Request-KeyID: [keyID]” -H &amp;quot;X-Apple-CloudKit-Request-ISO8601Date: [date]&amp;quot; -H &amp;quot;X-Apple-CloudKit-Request-SignatureV1: [signature]&amp;quot; -d &amp;apos;{&amp;quot;users&amp;quot;:[{&amp;quot;emailAddress&amp;quot;:&amp;quot;[user email]&amp;quot;}]}&amp;apos; https://api.apple-cloudkit.com/database/1/[container ID]/development/public/users/lookup/email
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/35247436/cloudkit-server-to-server-authentication/35254094&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stack Overflow上的一些用户&lt;/a&gt;也提供了&lt;code&gt;JavaScript，PHP和Python&lt;/code&gt;语言的替代实现。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CloudKit&lt;/code&gt;给开发者提供了包括身份认证，私有和公共数据库，结构化的一些服务，例如基于plist，资产存储。&lt;/p&gt;
+&lt;p&gt;原文翻译自&lt;a href=&quot;http://www.infoq.com/news/2016/02/cloudkit-server-to-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;InfoQ&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;更多&lt;code&gt;iOS&lt;/code&gt;、&lt;code&gt;Android&lt;/code&gt;精彩文章请关注微信公众账号：&lt;code&gt;lecoding&lt;/code&gt;,你也可以扫描下方二维码关注我们。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;qrcode_for_gh_af22362bf4bb_258.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;苹果最近&lt;a href=&quot;https://developer.apple.com/news/?id=02042016a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;宣布&lt;/a&gt;可以连接苹果云平台的&lt;code&gt;OS X&lt;/code&gt;和&lt;code&gt;iOS&lt;/
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>iOS二维码扫描和创建(下)</title>
@@ -891,9 +924,16 @@ a^=b;
     <link href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
     <id>http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
     <published>2016-05-24T01:25:35.000Z</published>
-    <updated>2016-05-24T10:44:39.000Z</updated>
+    <updated>2016-06-03T09:55:42.000Z</updated>
     
-    <content type="html">&lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
+    <content type="html">&lt;p&gt;Xcode7给storyboard带来了以下特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。&lt;/li&gt;
+&lt;li&gt;通过 scene dock  给ViewController附加view。&lt;/li&gt;
+&lt;li&gt;在storyboard上给 navigation bar添加多个button .&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。&lt;/li&gt;
 &lt;li&gt;通过 scene dock  给ViewController附加view。&lt;/li&gt;
@@ -911,13 +951,18 @@ a^=b;
     
     <summary type="html">
     
-      &lt;p&gt;今天有空看了下iOS9 Storyboard的新特性，Xcode7给storyboard带来了以下特性：&lt;/p&gt;
+      &lt;p&gt;Xcode7给storyboard带来了以下特性：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;分解一个单一的storyboard成多个storyboard,并通过 storyboard references  连接他们。&lt;/li&gt;
-&lt;l
+&lt;li&gt;通过 scene dock  给ViewController附加view。&lt;/li&gt;
+&lt;li&gt;在storyboard上给 navigation bar添加多个button .
     
     </summary>
     
+      <category term="About" scheme="http://lvesli.com/categories/About/"/>
+    
+    
+      <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
     
   </entry>
   
