@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvesli.com/"/>
-  <updated>2016-06-03T06:21:09.000Z</updated>
+  <updated>2016-06-03T10:18:39.000Z</updated>
   <id>http://lvesli.com/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>About Me</title>
+    <link href="http://lvesli.com/2016/06/03/About-Me/"/>
+    <id>http://lvesli.com/2016/06/03/About-Me/</id>
+    <published>2016-06-03T10:10:13.000Z</published>
+    <updated>2016-06-03T10:18:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;欢迎来到 &lt;code&gt;LvesLi&amp;#39;s Blogging&lt;/code&gt; 。我是李兴乐 ，从事互联网移动开发，乐于分享。欢迎订阅我的微信公众账号:”乐Coding”,里边有更多&lt;code&gt;iOS&lt;/code&gt;、&lt;code&gt;Swift&lt;/code&gt;开发相关精彩文章。&lt;/p&gt;
+&lt;p&gt;联系方式如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;微博&lt;a href=&quot;http://weibo.com/wildcatlele&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@Lves李兴乐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github：&lt;a href=&quot;https://github.com/Lves&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/Lves&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;欢迎关注微信公众账号：&lt;code&gt;乐Coding&lt;/code&gt; 或者 &lt;code&gt;lecoding&lt;/code&gt;,你也可以扫描下方二维码：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;欢迎来到 &lt;code&gt;LvesLi&amp;#39;s Blogging&lt;/code&gt; 。我是李兴乐 ，从事互联网移动开发，乐于分享。欢迎订阅我的微信公众账号:”乐Coding”,里边有更多&lt;code&gt;iOS&lt;/code&gt;、&lt;code&gt;Swift&lt;/code&gt;开发相关精彩文章。&lt;/
+    
+    </summary>
+    
+      <category term="About" scheme="http://lvesli.com/categories/About/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>苹果开放了CloudKit对服务器到服务器端的请求</title>
     <link href="http://lvesli.com/2016/06/03/%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%94%BE%E4%BA%86CloudKit%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%9A%84%E8%AF%B7%E6%B1%82/"/>
     <id>http://lvesli.com/2016/06/03/苹果开放了CloudKit对服务器到服务器端的请求/</id>
     <published>2016-06-03T06:20:18.000Z</published>
-    <updated>2016-06-03T06:21:09.000Z</updated>
+    <updated>2016-06-03T10:05:12.000Z</updated>
     
     <content type="html">&lt;p&gt;苹果最近&lt;a href=&quot;https://developer.apple.com/news/?id=02042016a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;宣布&lt;/a&gt;可以连接苹果云平台的&lt;code&gt;OS X&lt;/code&gt;和&lt;code&gt;iOS&lt;/code&gt;版&lt;code&gt;CloudKit&lt;/code&gt;框架，现在已经对&lt;code&gt;服务器到服务器&lt;/code&gt;的网络请求进行了开放。它消除了以前只有&lt;code&gt;iOS和MAC&lt;/code&gt;应用才能连接到&lt;code&gt;CloudKit&lt;/code&gt;公共数据库的限制，使服务器直达苹果web站点。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;CloudKit&lt;/code&gt;服务器到服务器的请求在原来已有特性的基础上新添加了允许开发者提供网络接口，使用户能访问自己的iCloud数据。服务器到服务器的请求根本目的是提供访问&lt;code&gt;iCloud&lt;/code&gt;公共数据的权限，也为&lt;code&gt;Parse&lt;/code&gt;关闭&lt;code&gt;DBaaS&lt;/code&gt;在一定程度上提供了另外一种选择。&lt;/p&gt;
@@ -45,6 +73,10 @@
     
     </summary>
     
+      <category term="翻译" scheme="http://lvesli.com/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+    
+      <category term="Apple" scheme="http://lvesli.com/tags/Apple/"/>
     
   </entry>
   
@@ -53,7 +85,7 @@
     <link href="http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/"/>
     <id>http://lvesli.com/2016/05/26/QRImage-scann-and-create-2/</id>
     <published>2016-05-26T01:30:56.000Z</published>
-    <updated>2016-05-26T01:37:11.000Z</updated>
+    <updated>2016-06-03T10:08:12.000Z</updated>
     
     <content type="html">&lt;p&gt;在上一篇文章《二维码扫描和创建（上）》中我们已经介绍了三种扫描二维码的方式和如何扫描相册中的二维码图片，想查看的可以关注我们的微信公众号：&lt;code&gt;lecoding&lt;/code&gt; ,里边有更多 &lt;code&gt;iOS&lt;/code&gt;开发精彩文章。今天我们谈谈我了解到关于创建二维码的几种方式。&lt;/p&gt;
 &lt;p&gt;我在iPhone APP &lt;code&gt;扫码神奇&lt;/code&gt;中使用的就是下面第二种方法，大家可以到APPStore搜索&lt;code&gt;扫码神奇&lt;/code&gt;,下载体验一下（记得给个好评呦）。&lt;code&gt;扫码神奇&lt;/code&gt;下载链接：&lt;br&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/id1074173840&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://itunes.apple.com/cn/app/id1074173840&lt;/a&gt;&lt;/p&gt;
@@ -300,6 +332,10 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
+    
+    
+      <category term="扫码" scheme="http://lvesli.com/tags/%E6%89%AB%E7%A0%81/"/>
     
   </entry>
   
@@ -308,7 +344,7 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
     <link href="http://lvesli.com/2016/05/26/QRImage-scann-and-create/"/>
     <id>http://lvesli.com/2016/05/26/QRImage-scann-and-create/</id>
     <published>2016-05-26T01:30:27.000Z</published>
-    <updated>2016-05-26T01:34:18.000Z</updated>
+    <updated>2016-06-03T10:08:35.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/20160525/001.png&quot; alt=&quot;saomashengqi.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;##扫描二维码（包括读取和解码）&lt;/p&gt;
@@ -500,6 +536,10 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
+    
+    
+      <category term="扫码" scheme="http://lvesli.com/tags/%E6%89%AB%E7%A0%81/"/>
     
   </entry>
   
@@ -508,7 +548,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     <link href="http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/"/>
     <id>http://lvesli.com/2016/05/25/Avoiding-Wechat-RedPicture/</id>
     <published>2016-05-25T01:30:55.000Z</published>
-    <updated>2016-05-25T01:44:07.000Z</updated>
+    <updated>2016-06-03T10:06:21.000Z</updated>
     
     <content type="html">&lt;p&gt;微信朋友圈红包照片绕过方法：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;微信朋友圈&lt;/code&gt;刚出的新功能只有发红包才能看到对方的照片，想必大家已经被刷屏了吧。其实这张照片只是在客户端加了一个&lt;code&gt;毛玻璃&lt;/code&gt;效果，原始图片是没有的，只要抓包就可以看到不用给他红包哈哈哈，下面介绍一下iPhone如何查看对方的照片。&lt;br&gt;下载一个抓包工具，&lt;code&gt;Mac&lt;/code&gt;电脑我使用的是&lt;code&gt;Charles&lt;/code&gt;,打开Charles，&lt;code&gt;MAC&lt;/code&gt;要和iPhone在同一个&lt;code&gt;Wifi&lt;/code&gt;下，然后进入朋友圈点击你想看的图片，就会发送网络请求，在&lt;code&gt;Charles&lt;/code&gt;中复制下面请求的&lt;code&gt;URL&lt;/code&gt;，把链接粘贴到浏览器就可以看到了。哈哈你们的图片我都看到了……愚蠢的人类。&lt;/p&gt;
@@ -524,6 +564,10 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     
     </summary>
     
+      <category term="杂七杂八" scheme="http://lvesli.com/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+    
+      <category term="微信" scheme="http://lvesli.com/tags/%E5%BE%AE%E4%BF%A1/"/>
     
   </entry>
   
@@ -532,7 +576,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     <link href="http://lvesli.com/2016/05/25/QRScanner/"/>
     <id>http://lvesli.com/2016/05/25/QRScanner/</id>
     <published>2016-05-25T01:28:38.000Z</published>
-    <updated>2016-05-25T01:41:53.000Z</updated>
+    <updated>2016-06-03T10:09:00.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/20160525/001.png&quot; alt=&quot;xuanchuan1.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;###iOS版&lt;code&gt;扫码神奇&lt;/code&gt;上线了，二维码条形码扫描和创建神器。二维码扫描，神奇啊！&lt;/p&gt;
@@ -560,6 +604,10 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
+    
+    
+      <category term="扫码神奇" scheme="http://lvesli.com/tags/%E6%89%AB%E7%A0%81%E7%A5%9E%E5%A5%87/"/>
     
   </entry>
   
@@ -568,7 +616,7 @@ reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     <link href="http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/"/>
     <id>http://lvesli.com/2016/05/25/ScrollView-NavigationBars-scroll-top-hiden-down-show/</id>
     <published>2016-05-25T01:27:49.000Z</published>
-    <updated>2016-05-25T01:37:11.000Z</updated>
+    <updated>2016-06-03T10:09:21.000Z</updated>
     
     <content type="html">&lt;p&gt;我司产品🐶突然喜欢上了&lt;code&gt;知乎&lt;/code&gt;和&lt;code&gt;简书&lt;/code&gt;的的那种上滑加载更多时隐藏&lt;code&gt;NavigationBar&lt;/code&gt;,下拉时显示的那种效果。那些阅读类APP需要&lt;code&gt;沉浸式体验&lt;/code&gt;隐藏导航栏无可厚非，我就纳闷一个P2P类软件你隐藏个毛线！废话少说，技术很好实现几行代码的事。&lt;/p&gt;
 &lt;p&gt;在包含&lt;code&gt;TableView&lt;/code&gt;或者&lt;code&gt;ScrollView&lt;/code&gt;的.m文件中加入以下代码:&lt;/p&gt;
@@ -621,6 +669,10 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
+    
+    
+      <category term="iOS动画" scheme="http://lvesli.com/tags/iOS%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
@@ -629,7 +681,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     <link href="http://lvesli.com/2016/05/25/Swift-Closures/"/>
     <id>http://lvesli.com/2016/05/25/Swift-Closures/</id>
     <published>2016-05-25T01:26:11.000Z</published>
-    <updated>2016-05-25T01:33:45.000Z</updated>
+    <updated>2016-06-03T10:09:40.000Z</updated>
     
     <content type="html">&lt;p&gt;##闭包&lt;/p&gt;
 &lt;p&gt;Swift对闭包进行了简化：&lt;/p&gt;
@@ -696,6 +748,10 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     
     </summary>
     
+      <category term="Swift" scheme="http://lvesli.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://lvesli.com/tags/Swift/"/>
     
   </entry>
   
@@ -704,7 +760,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     <link href="http://lvesli.com/2016/05/25/A-Swift-Tour/"/>
     <id>http://lvesli.com/2016/05/25/A-Swift-Tour/</id>
     <published>2016-05-25T01:18:06.000Z</published>
-    <updated>2016-05-25T01:20:11.000Z</updated>
+    <updated>2016-06-03T10:05:48.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;code&gt;Swift1.0&lt;/code&gt;的时候一时兴起学习了一下&lt;code&gt;swift&lt;/code&gt;的基本语法，现在&lt;code&gt;Swift&lt;/code&gt;已经更新到 &lt;code&gt;2.1&lt;/code&gt;了,自己吧学到的也忘得差不多了，接下来重新复习一下。 &lt;/p&gt;
 &lt;p&gt;今天先记录一下学习&lt;code&gt;swift初见&lt;/code&gt;相关知识点。&lt;br&gt;微信公众账号&lt;code&gt;lecoding&lt;/code&gt;同步更新&lt;/p&gt;
@@ -772,6 +828,12 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     
     </summary>
     
+      <category term="Swift" scheme="http://lvesli.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://lvesli.com/tags/Swift/"/>
+    
+      <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
     
   </entry>
   
@@ -780,7 +842,7 @@ if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     <link href="http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/"/>
     <id>http://lvesli.com/2016/05/24/Objective-C-The-Preprocessor/</id>
     <published>2016-05-24T01:38:28.000Z</published>
-    <updated>2016-05-24T10:45:41.000Z</updated>
+    <updated>2016-06-03T10:07:08.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;code&gt;Objective-C&lt;/code&gt;源文件在编译之前要先经过预编译器处理，然后再扔给&lt;code&gt;LLVM&lt;/code&gt;处理、优化。&lt;code&gt;Objectice-C&lt;/code&gt;编译器从源文件的输入到编译后的输出文件,处理过程分解后如下图：&lt;br&gt;&lt;img src=&quot;/img/20160524/101.png&quot; alt=&quot;123.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如上图所示编译过程大体包括词法分析、语法分析、生成代码和优化、汇编链接，最后输出可执行的二进制文件。关于其中每个阶段的具体行为，我们就不做具体研究了，已经超出了我的能力范围（恨自己当年大学期间编译原理没有好好学啊），如果你感兴趣可以研究一下“龙书”《Compilers: Principles, Techniques, and Tools》，传说&lt;code&gt;LLVM&lt;/code&gt;的作者&lt;code&gt;Chris Lattner&lt;/code&gt; 曾经修炼了这本武功秘籍，还未毕业就被Apple盯上了。&lt;code&gt;龙书&lt;/code&gt;真容如下（快膜拜）：&lt;br&gt;&lt;img src=&quot;/img/20160524/102.png&quot; alt=&quot;234.png&quot;&gt;&lt;/p&gt;
@@ -916,6 +978,12 @@ a^=b;
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
+    
+      <category term="Objective-C" scheme="http://lvesli.com/tags/Objective-C/"/>
     
   </entry>
   
@@ -924,7 +992,7 @@ a^=b;
     <link href="http://lvesli.com/2016/05/24/iOS9-Storyboard%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BStoryboard-References/"/>
     <id>http://lvesli.com/2016/05/24/iOS9-Storyboard新特性之Storyboard-References/</id>
     <published>2016-05-24T01:25:35.000Z</published>
-    <updated>2016-06-03T09:55:42.000Z</updated>
+    <updated>2016-06-03T10:04:17.000Z</updated>
     
     <content type="html">&lt;p&gt;Xcode7给storyboard带来了以下特性：&lt;/p&gt;
 &lt;ol&gt;
@@ -959,7 +1027,7 @@ a^=b;
     
     </summary>
     
-      <category term="About" scheme="http://lvesli.com/categories/About/"/>
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
     
     
       <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
@@ -971,7 +1039,7 @@ a^=b;
     <link href="http://lvesli.com/2016/05/23/OS-X-10-11-%E5%AE%89%E8%A3%85Cocoapods%E5%A4%B1%E8%B4%A5%EF%BC%9AOperation-not-permitted/"/>
     <id>http://lvesli.com/2016/05/23/OS-X-10-11-安装Cocoapods失败：Operation-not-permitted/</id>
     <published>2016-05-23T11:02:07.000Z</published>
-    <updated>2016-05-24T10:46:08.000Z</updated>
+    <updated>2016-06-03T10:07:47.000Z</updated>
     
     <content type="html">&lt;p&gt;   系统升级到 &lt;strong&gt;&lt;em&gt; OS X 10.11 &lt;/em&gt;&lt;/strong&gt;  (EI Capitan)的时候，当安装 &lt;strong&gt; CocoaPods &lt;/strong&gt; 的时候提示如下的错误：&lt;strong&gt;&lt;em&gt; Operation not permitted &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&quot;一共有两种解决方案：&quot;&gt;&lt;a href=&quot;#一共有两种解决方案：&quot; class=&quot;headerlink&quot; title=&quot;一共有两种解决方案：&quot;&gt;&lt;/a&gt;一共有两种解决方案：&lt;/h4&gt;&lt;blockquote&gt;
@@ -1002,34 +1070,10 @@ $ pod setup
     
     </summary>
     
+      <category term="iOS" scheme="http://lvesli.com/categories/iOS/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://lvesli.com/2016/05/20/hello-world/"/>
-    <id>http://lvesli.com/2016/05/20/hello-world/</id>
-    <published>2016-05-20T11:39:41.000Z</published>
-    <updated>2016-05-24T10:37:41.000Z</updated>
     
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
+      <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
     
   </entry>
   
