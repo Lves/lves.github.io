@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvesli.com/"/>
-  <updated>2016-06-03T10:18:39.000Z</updated>
+  <updated>2016-06-06T06:25:58.000Z</updated>
   <id>http://lvesli.com/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS-Charts</title>
+    <link href="http://lvesli.com/2016/06/06/iOS-Charts/"/>
+    <id>http://lvesli.com/2016/06/06/iOS-Charts/</id>
+    <published>2016-06-06T06:20:08.000Z</published>
+    <updated>2016-06-06T06:25:58.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/20160606/iOSCharts.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近很多读者问我为什么公众号最近一直没有更新，我在次对大家表示道歉，前段时间工作上比较忙，周末还要去学驾照（不到两个月就拿到本了，还是很开心），平时还在帮助朋友做点小项目，所以就没时间更新了。前边都是在扯淡，主要原因还是因为现在订阅用户太少，自己太懒，哈哈…&lt;/p&gt;
+&lt;p&gt;今天一时兴起给大家介绍一个好用的数据图开源库:&lt;code&gt;iOS-Charts&lt;/code&gt;,github链接&lt;a href=&quot;https://github.com/danielgindi/Charts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/danielgindi/Charts&lt;/a&gt;,这个开源库是用Swift实现的，作者相当🐂，这个项目有&lt;code&gt;9435&lt;/code&gt;个Star,Android也有他写的相应开源库：&lt;code&gt;MPAndroidChart&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/001.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/002.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/003.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/004.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/005.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/006.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/007.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/008.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/009.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/010.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/011.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/012.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160606/013.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###进店须知&lt;br&gt;先上几个美图，给大家个视觉感受，看看是不是你的菜，现在毕竟是看脸的时代。然后我再介绍她能提供哪些“特殊服务”。如果你满意接下来再具体给你介绍如何把“她”抱回家（具体配置和使用）。&lt;/p&gt;
+&lt;p&gt;###店长介绍&lt;br&gt;看完&lt;code&gt;艳压群芳、技压群芳&lt;/code&gt;的姑凉们，如果感觉还不错，接下来听我具体介绍本店的”特殊服务”。本店特色、店长推荐，免除你独自撸码实现的烦恼。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以实现8各不同类型的数据图&lt;/li&gt;
+&lt;li&gt;支持图形缩放（使用你勤劳的手指双击或者双指撑开）&lt;/li&gt;
+&lt;li&gt;支持拖拽和滑动&lt;/li&gt;
+&lt;li&gt;双轴线&lt;/li&gt;
+&lt;li&gt;自定义x轴或者y轴&lt;/li&gt;
+&lt;li&gt;高亮数据（自定义 popup-views）&lt;/li&gt;
+&lt;li&gt;以PNG、JPEG格式保存到相册&lt;/li&gt;
+&lt;li&gt;预定义颜色模板&lt;/li&gt;
+&lt;li&gt;图例（自动生成或者自定义）&lt;/li&gt;
+&lt;li&gt;动画（支持x轴和y轴动画）&lt;/li&gt;
+&lt;li&gt;限制线（用于显示添加限制信息或者最大值）&lt;/li&gt;
+&lt;li&gt;自定义（绘制、类型面板、图例、颜色、背景、手势、虚线）&lt;/li&gt;
+&lt;li&gt;绘制来自&lt;a href=&quot;https://realm.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Realm.io&lt;/a&gt;移动数据库的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;能看到这说明你也是一个痴情郎啊，既然选择就一往情深。下面看看如何带回家享受服务吧。&lt;/p&gt;
+&lt;p&gt;###缴费办理&lt;/p&gt;
+&lt;p&gt;####一、 手动配置&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把&lt;code&gt;Charts.xcodeproj&lt;/code&gt;拖拽到你的工程&lt;/li&gt;
+&lt;li&gt;打开&lt;code&gt;target&amp;#39;s settings&lt;/code&gt;,点击 &lt;code&gt;Embedded Binaries&lt;/code&gt;下方的加号，选择&lt;code&gt;Charts.framework&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Xcode 6.3.1 有一个bug,你必须先编译然后引入头文件&lt;/li&gt;
+&lt;li&gt;@import Charts&lt;/li&gt;
+&lt;li&gt;在Objc项目中需要添加桥接文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;####一、 使用Pods&lt;br&gt;1.在&lt;code&gt;Podfile&lt;/code&gt;文件中添加&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;Charts/Realm&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行 &lt;code&gt;pod install&lt;/code&gt;命令&lt;/p&gt;
+&lt;h3 id=&quot;售后服务&quot;&gt;&lt;a href=&quot;#售后服务&quot; class=&quot;headerlink&quot; title=&quot;售后服务&quot;&gt;&lt;/a&gt;售后服务&lt;/h3&gt;&lt;p&gt;&lt;code&gt;iOS-Charts&lt;/code&gt;已经能够实现大部分功能，当然由于业务需求，她不能完全满足你的需求，就需要你改源码了。比如我司业务还需要她满足一下功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据点只支持圆点不支持正方形。&lt;/li&gt;
+&lt;li&gt;多条折线时无法同时高亮相同X轴的点&lt;/li&gt;
+&lt;li&gt;柱状图动画不支持数值变换&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下一篇文章我会讲解如何在GitHub上Fork iOS-Charts的代码、修改源码满足自己的业务需求。&lt;/p&gt;
+&lt;p&gt;看到这，你才是“本店”的忠实粉丝啊，看在我们“优质的服务和合理的价格”，欢迎分享到朋友圈，未关注用户点击右上角关注哟。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本博客也会在 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 微信公众号中同步更新，欢迎大家订阅，有什么问题可以在此一起交流。公众号搜索：&lt;strong&gt;&lt;em&gt; 乐Coding &lt;/em&gt;&lt;/strong&gt; 或者 &lt;strong&gt;&lt;em&gt; lecoding &lt;/em&gt;&lt;/strong&gt; 或者微信扫描下方二维码：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/icon.jpg&quot; alt=&quot;/img/icon.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/20160606/iOSCharts.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近很多读者问我为什么公众号最近一直没有更新，我在次对大家表示道歉，前段时间工作上比较忙，周末还要去学驾照（不到两个月就拿到本了，还是很开心），平时还在帮助朋友
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://lvesli.com/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://lvesli.com/tags/Swift/"/>
+    
+      <category term="iOS" scheme="http://lvesli.com/tags/iOS/"/>
+    
+      <category term="Charts" scheme="http://lvesli.com/tags/Charts/"/>
+    
+  </entry>
   
   <entry>
     <title>About Me</title>
