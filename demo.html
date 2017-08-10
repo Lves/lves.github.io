@@ -49,7 +49,9 @@ function saveName() {
       s += " 你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色"+"\n";    
       s += " 你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸"+"\n"; 
       s += "语言" + window.navigator.language;   
-      alert (s);
+//       alert (s);
+      document.writeln("<br/>");
+      document.writeln(s);
     }
     getInfo();
   </script>
