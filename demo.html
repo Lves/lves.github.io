@@ -12,18 +12,15 @@ var name;
 if (m) {
   document.writeln("You are " + m[1] + '.');
   name = m[1];
+  location.href = "safariDemo://name=" + name;
 } else {
-  document.writeln("You are anonymous.");
+  document.writeln("You are ?.");
   name = "";
-}
-
-if (location.search.match(/redirect/)) {
-  location.href = "svclogintest://name/" + name;
 }
 
 function saveName() {
     document.cookie = 'name=' + document.getElementById('name').value + ';max-age=3600';
-    location.reload();
+    document.writeln("setCookie ok");
 }
 
 </script>
