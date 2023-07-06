@@ -8,7 +8,6 @@
 > - [UnionPay prepaid Card](velo://citizenship?group=cup&language=en)
 
 ## InApp application
-> - [CD](velo://login?deeplink=cd)
-> - [Secured Credit Card](velo://citizenship?deeplink=securedcard)
-> - [Wealth](velo://citizenship?deeplink=wealth)
-> - [loan](velo://citizenship?deeplink=loan)
+> - [CD](velo://login?task=cdMore)
+> - [Secured Credit Card](velo://login?task=creditCard)
+> - [Wealth](velo://login?task=wealth)
