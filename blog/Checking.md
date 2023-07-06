@@ -5,7 +5,10 @@
 ## Checking
 > - [Checking Account](velo://citizenship?group=checking)
 > - [Global Student account](velo://citizenship?group=student)
-
-## Cards
 > - [UnionPay prepaid Card](velo://citizenship?group=cup&language=en)
-> - [Secured Credit Card](velo://citizenship?group=securedcard)
+
+## InApp application
+> - [CD](velo://login?deeplink=cd)
+> - [Secured Credit Card](velo://citizenship?deeplink=securedcard)
+> - [Wealth](velo://citizenship?deeplink=wealth)
+> - [loan](velo://citizenship?deeplink=loan)
